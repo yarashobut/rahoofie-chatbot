@@ -1,0 +1,1386 @@
+import openai
+from openai import OpenAI
+from keys import api_key
+
+long_string = "Hi baby girl, I miss you so much :(, i miss u more Bro, when r u free to ft?, I'm like running \
+from one event to another and it's so hectic and people here are weird, We're on our way to Walmart rn I'll \
+FaceTime u when we're home bbg, Why weirdddd, Bruh at the Philips evans meet and greet one person just goes I \
+had a stroke last year and I'm like, Like what, AWWWW, SHES SO CUTEEEE, HELLOOO, Shut up, Completely sober, \
+AWWW YARYOOORAAA, I miss you so much you don't even know, WE HAVE TO FT, I'll call u when I can bbg, PLEASEE \
+LETS, Yes yes I'm j omw to a partay, Teheh, OOOO, what kinda partayyyy, dorm party at the freshman only building\
+slayyy, YAYYYA HAVE FUNN POOKIEEE, EEEEEK, Found this pic of catie finding yaras orange in her bag, HANNAAAAA,\
+WHY IS THERE A LUMP IN MY THROAT, Boy this bus packed, I hate the buses, My college writing teacher professor \
+mean, Im scared, Im gonna change this clas, Class, Just ask around pookie, Lol, AWWW, i14Brushin her teeth a \
+little too hard, THE VOICESSSS, Is it for all recitations?, Like even calc?, Guys come to Busch, To hang with\
+me heheh, I'm On my way! There, Get off at hill center, That's the closest stop to our calc class I checked,\
+Are u free, Hehehhehe, I miss u, I miss u more, Im sorry im doing work, I canat wait for next weekend tho, \
+It's okieeee, Me tooooo, Hehehehehheheh, 2ai, AWEWWWWWW YARYOORAAAAA, YOU excluded yourself, Go slay bears \
+or sabreen shein haul, IT KEEPS GETTING WORSEEE, NAHAHAHHAHAHA, Can we see gen Hanna, Hehehe, No, Why I was\
+gonna get something:(, Is it bad rn, I hate LX, HAHAHAHA, OH NO WE GOTTA GO, RUNNNN, What he do Eunice poonice,\
+Girl what, No youare not, Does he think heas funny like what, WHATTTTT, UNFRIEND THESE MEN, Eunice thereas a \
+welcoming happy  bed and bestie waiting for u at home if u wanna come, What the fuck, Come home baby girl, \
+i14, Yummyyyyyy sabreennnn, I miss you22222, Are u coming home this weekend, pls say yes, I need my rahoofie, \
+HI BABY GIRLLLL, I miss you so much moreeeee, I still havenat talked to my mom abt how I'm getting to baby \
+shower so idk if I'm leaving from New Brunswick or Wayne, But I shall let you know, I'm so so excited, To see \
+u, I miss u so freaking muchhhh, u should come back 1111, We have to DEBRIEF, I wanna hear everything ab ur \
+college experience mama, I wanna, Yayayaya tehehehehehe, Just met Anthony qasisas sister in my Israeli \
+Palestinian class, THEYRE FUNNY RIGHT, SABREEN MAKING FUN OF ME, HUH, HELLOOOOOOOOOOO, ALECOOOO??, Can we see \
+him, U havenat, Told us, Abt him, WHO TF IS ADI, Can we, See, How big, Yes, Thx, Answer, Eyeball it i, Uhhhhh, \
+Not the quran necklace, WHYY, Was it bad, Very uncomfy, I canat focus on two things at once, Who tf likes \
+giving head, Like frls, And she called MY BOYFRIEND WHITE, I Support, Eudam, Hehehe, DUMPYYY, i14Why am I in \
+distress, Wowwwww I love your tote bag catie where did u get it, Silly gurl, Girl I have no choice, My parents \
+bringing me every weekend whether I like it or not, The week after and the week after and the week after, Every\
+week of my life, BABY YARARARAT I MISS YOUUUUU :(, i14Lulu really missed me Iave been sitting here in this \
+position for over an hour. She never does this, Liked aWatch a moviea, i14, i14, i14i14, Whatttttt, Hhiiiii, \
+Do u still wanna do something pookie, I'm gonna be home in a bit, Like 15 min, I want to rlly bad, But mama \
+said I canat go to ur house at this hour so do u wanna just wanna grab ice cream w sabreen bean, Oh welll I \
+don't if mama gonna let me go out Iave been not home all day, Iall ask her when I'm home, NAWRRRR, Mommy said\
+no it's unnecessary and I should do hw, BRUH WHATTTTTTTTTTTTT, NAWRRRRR, can sabreen and I pu then even if \
+it's for like ten mins, Girl yes, Of course, Come over of courseeee, Yasssssss, In like 40 mins tho, I have \
+to visit my gma RQ, Okie okie no worries hehe, but mama was like absolutely not and she barely is letting me\
+see sabreen RQ Bc she wants me to see her in the morning instead too, Itas okay don't worry abt it pookie, \
+i14PLS PLAY THE LIVE, can u send me the pics from td1111, Do u wanna get our nails did rn, Hi pookie, I \
+canat rn I'm gonna go out have breakie with mama, It's Okie, Have fun tell ur mom I love and miss her and \
+give her a hug for me, I'm so glad I got to squeeze u yesterday even if we couldnat hangout too long 2222, \
+we need to start setting a time consistently into our schedule to ft each other bro, Me too baby girlllll \
+:( it literally felt like 30 minutes with you I'm so sad, I KNOWWW, I LOVE YOU, i14, I wanna go tooooo, \
+MWAHHH, I shared album with u pookie did u get it, Adlan said my accent sounds funny, i14, i14Mwahahauwha \
+11, i14, Oh, Lol, a1i, Mean, I was just tryna help, IM SORYY, god fine I won't help no more, STOP, GOD, I \
+JUST SAW YARA SAYING SHES TRYNA DECIPHER THE FLAG, SO I HELPED, GOD, FINE, ALL OF U, Thank you Deanna, I \
+won't talk in the group chat, I silent, Me silent, BABY CAKES, AWWWW, U guys are so cute, GIRL WHAT, NO IT \
+WASNT, CATIE WAS THE ONE WHO ASKED ME IF I WANNA GET BOBA, i14Why she glitching, i14No bc why did I wake up \
+to paragraphs because Jonathan decided he has to learn more about Palestine at 4 am, I KNOWWWW RIGHTTTTT, \
+BROS MADDDDD, Ur still aesthetic dw, Too aesthetic to handle, Gay brain, i14i14, i14, YAYAYYAYAYA, SHOW FIT,\
+UR HAIIIIR, IT LOOKS SO GOOD, i14i14i14i14i14i14i14i14i14, HANNUSHKAAAAAAA, UR SO FUCKING ADORABLE, CAR \
+PHOTOSHOOT, thatas my future car guys, When I get license, Disgusting dining hall food never again, Toyota\
+crown, SHES FAST, DO U NOT SEE THE BUN DISINTEGRATING, i14i14, GREAT!, I miss you more my hannushka, No \
+she only miss me clearly, BAHAHAHAH, IM DYINGAGGAGAGAGAGGA, i14i14, i14, A lot, They follow each other and\
+talk everyday heheh, i14, My bean, Yeahh my college writing teacher said it's flooded in her area so she \
+canat come, YYYSYAYAYYAYAYAY, MABROOOOKKK, FRIDAYYYY DUMP GUYSSSS, GO GO GO, Context behind this is that \
+my key got stuck in the door, And adlan came to take it out, MASHALLAH, WOW, YARYORRAAAAAAAA, CONRATS BABY\
+AUNTIEEEEEEE, AWEWW MY GAEWEWWDDD, get it, i14POONICE BIRTHDAYYYYYY, Sassy man apocalypse, HI POOKIEEE \
+BEARRR, HOW ARE U DOING, HOWS LIFE, HOWS NEE BABYYY, TELL ME TELL ME, HI BESTIE, School is really starting\
+to school, And It feels like a constant loop of always trying to catch up, I'm just struggling w the idea\
+that I canat be ahead in my classes which I'm used to like I'm j trying to stay on track but it feels \
+risky to not have things done ahead of time idk, Iave been trying to get into my halal era a lil more, \
+I decided I don't wanna drink anymore, and I quit nic a long time ago tehehehehe, it just like happened \
+nothing planned or whatever I just didnat have access to it here bc no one rlly vapes so I quit lols, \
+Iave been trying to get better at calling my family and u guys but I'm so exhausted by the end of each \
+day and it's just a loop of work eat sleep party repeat I have to learn to slow down and find that time, \
+I miss you so freaking much, Like u don't understand, I have friends and everything here but no one makes\
+me feel as happy and comfortable as you guys 2, the men here are all trash so it's also annoying, The baby\
+is good Iall tell u ab child birth trauma when I can ft u remind meeee, But I gotta sleep now bc I have an\
+8 am tmw but I love you so so so so so much rahoofie, I miss you, Goodnight, Awww yaryoorraaa it's okay I\
+know it's very different I understand cuz my studying habits are also changing a lot . but I know you got \
+it baby girllll, SLAYYYYY ME TOOO, YESS ME TOO I DECIDED NO MORE WEED NO MORE ALC, and I havenat gone out\
+to a frat with the girls once, REALLYYY. Wait thatas sooo slay I know youave been wanting to quit for \
+forever. Itas rlly hard when everyone around you is doing it . I'm so happy for u pookie bear, Yaraaaaaa \
+:( I love you so much, Oh!, Good luck baby girl sleep tight heheh, OMG SLAYYYY, I'm proud of u bbg, i love \
+you <33333, BUT WHAT AB U RAHOOOOFUEEEEE, UPDATE MEEE, HOWS UR LIFE, WHATS HOING ON, HOWS LOVER BOY, \
+SPILLLLLLLLLLLL, Thereas nothing going on really same old same old, Weare doinggggg greatttttttttt, Heas \
+coming next month hehehehehhe, OMG SLAYYYYYYY THATS SO EXCITING, WHENNNBB, I wanna meet him!!, YAYAY, November\
+17, He booked his flight and everything so it's confirmed heheh, Itas a weekend pu, OMG YASSSSSSSSSSSSSSSS, \
+WOAHHHHHHH, Adlan said I have manhands, And then, He proceeded to aapologizea by saying aI'm sorry you have \
+man handsa, i14Do I have man hands, i14Hand photo shoot, i14DO I HAVE MAN HANDS, ADD MEEE, PLSSS, I love you \
+yaryoora, Miss u so much baby girl, i14i14i14i14i14i14i14i14, Heheheh, Sabreen gripping my AirPods on the bus \
+Bcz we canat bend down and get it, What a nipple twin, What the fuck, Still valid Deanna, Girl what, WHO WANNA \
+PU TO WISCONSIN W ME, AWWWW HAHAHAHHAHA, SO FUCKING CUTE WTF, IM SORRY IM WRITING AN ESSAY RN CAN I CALL U LATER \
+TN, I'm sorrryyyy, i14, Thatas what they all say., i14i14, Bro is not The Weeknd bro is the jummah, In Arabic, Are\
+you on the zoom meeting for national SJP rn, i see some rutgers people, No I am not, I didnat even know abt that, \
+Oh nawrrrr, Deanniiiii, Just keep in mind none of these people would be able to talk and yap about all this to your\
+face, In my Israeli Palestinian class, Guys walked in with huge Palestine flags, I think I see Maddie galessi here, \
+I'm not sure tho, But thereas people Iave never seen before, Ppl brought their friends, Pull up Yallah, We love my \
+professor, It got so heated, Thatas crazy, WOHAHAHAHAHAHA, Catie, Hiiii, Did u ask ur mom abt this weekends, WE MUST\
+KNOW, PLEASE, I asked and she said I can come 11111, But I have to go home Sunday, I was gonna ft u and fill u in on\
+everything when I'm back at dorm, YAYYYAYAYA, Okie okie ft me when u can, - syed, u list ur points, we got a whole \
+agenda going tna, -Palestine rally tmrw too, NAWWWWWRTR, NAWEWWWRTRRR, HELP MEEEE, PLSSSS, i14, Yeah but she has to\
+buy a ticket, For us not her, So letas not go, Yara, ARE U FREE, Yes porque, Ft me, Okie can I just take my makeup \
+off and change first, Hiiii, Ft ft ft, i14, I love u, I will text u tme, Wtf, Purrrrrr, I miss you guys, AWWW, Yes \
+yes we willl hehe, i14i14i14i14, SEND ME THE PICS U TOOK ST CAFW111111, Yes yes heheh, Can I post u guys or is it \
+haram, Pick one I can post hehehehhe, Instaaaaa?, Okie Hehehehe, Yes yes, I was gonna do story, i14i14i14i14Here u \
+go pooks, I miss u, I miss you so much more our house feels so empty without you, I wish we could be home tg rn in \
+Wayne, HUUHHH, Hanna weare having a conversation and we wanna know if gens real name is gen, Catie said genjamin, Is\
+it genesis, i14, i14, i14i14i14, aChat is this reala, Hi, Hi, Hi, Hi, Hi, Hi, Wake up stinky, My mom is in Wayne \
+sheas coming to New Brunswick, If u wanna drop the glasses off at my house rn, And sheall bring you your glasses, \
+Lmk, Sheas leaving soon tho, Ok I'm supposed to be calling eunice to see if her glasses are urgent but sheas not \
+picking up, Does eunice need her glasses now? Like urgently?, Bc if not then ur mom can just go, Theyare just blue \
+light glasses, And when she brings me my glasses Iall give her Euniceas glasses, And when she visits u again sheall \
+bring them, I don't think theyare urgent, I'm coming home this weekend so I can give them to her if u give them to my\
+mom, Like later, When she drops off ur glasses, Yes I just told ur mom, Okie okie, That was so stressful bye, i14, \
+Guess, Hehehehehe, Lol, Go back to sleep pookie, no imma go eat, i14i14i14, The grippers are gripping, Itas mine 1, \
+Bruh, That is, The hassliest plan Iave ever heard, Bestieee did I leave my Milani bronzer and elf putty blush at ur \
+apartment, No pookie, RIP UGH, One of his 4 wives, i14i14i14i14i14i14i14i14i14i14i14i14Hehehhehehe dump dump, This \
+Egyptian comedian is all over my fyp, Bruh, Ate him up doe, OOOOOOOOOO, HAZLEEEETTT, Catie is at wedding, Sabreen cuz\
+it's cousins bday, 5, Ummmmmm, What did he do to his hands, STOPPPP, Thatas so sad :(, I'm gonna cry, i14, aThis is \
+why people drop outa, i14i14, aThis is why people do drugsa, YAYAYYAYA, Omg, Yesterday we were looking him up, Heas \
+Jordanian right, I don't think I can pookie my mom hardly let me stay here this weekend I just talked to her I def\
+gotta go home next weekend, Hi pookie, I miss you, I miss you more pookie, Imma ft u td, When I get back to my dorm, \
+FRIDAYYYY DUMP, i14i14i14i14i14i14i14i14i14i14i14, Youare beautiful deani baby, This is Anthonyas sister hehe weare \
+besties now, Laughed at aFun fact we made seraas bf take acandidsa of us foaa, i14Ordered this bc it made me think of \
+u, Then I remembered I don't like salmon like that, We were Alice in the wonderland characters, I was white rabbit,\
+Eunice was Cheshire Cat, Yes, Sawriuii, I TOLD U TO TAKE THEM WHRN U CAME OVER WITH SABREEN, aoh Iall put them here \
+Iall take them on my way outa YOU NEVER TOOK THEM AND NOW UR INS DC, Poookieeeee :(, I love you so much, i14, PEPE???,\
+i14, CRYINGGG J FOUND THIS FROM LAST NIGHT, LOLLL, I love u more pookie, Ou sawrrii, What should I say on Syedas \
+shirt, Ok so the back is gonna say I'm a loser, W this pic, i14, But the front is gonna say U UUU, On top of pics of me,\
+But what do I say on bottom, It should be in English, I was gonna so aYaras too smart and cool for mea but thatas cringey\
+I want something funny and slay, But not weird, No colored printer so everything in bw, i14, This the back I havenat done\
+letters yet, i14This the front just need one last pic on left, And the Arabic U UUU is on top, I am picking up, \
+i14Stalking Jonathanas following 1111, G, Go, Hi, Hi, H, Call meeee, Syed I want to lyk that I rlly did not appreciate\
+u calling me a athot daughtera even if u said it as a joke that shit is degrading, not funny, and straight up \
+disrespectful. Idk what I look like to you but know your place. Highkey upset., Good?, Perfect, Ok imma send aaaaaa, \
+This will determine if I stay friends w him, Update me pookie, Weall, Welp, Just sent it, No going back now, Fuck now I \
+feel like I shouldnat have sent it like am i dramatic, No no I have to let him know he canat disrespect me like that, \
+Ur not dramatic thatas so rude what, Yes yes, How long do u think itall take him to respond, I have his location hes in \
+his hotel room rn ik he not doing Jack shit, Does he usually respond fast idk, No I wanna work this out and see what he's\
+trying to freaking communicate, like that text just doesnat make sense, calm down? pushing it? if ur friend just called\
+you a whore I think youad be pretty mad too but fair enough I wanna hear what u have to communicate, is that good, I \
+don't want to fall under the narrative that I'm just mad and won't listen, I sent my thing, Not the habibti, Yaall crazy,\
+Whoas the guy you hate, the guy that raped my close friend, but i canat even say anything or do anything bc her privacy \
+and her wishes r always first and she doesnat anything done yet, he doesnat know any of this, he just know I don't like \
+this one man on campus but doesnat know why etc, Oh my god, R h guys good now, Is it not awkwy, Heas in love w u, no weare \
+chilling, what makes u say that help, I just ranted to him ab my lab partner and he hasnat responded, Maybe I ranted a lil\
+too much, oh well idc I'm happy I'm glad u told me to text him and figure our shit out, He just is I feel it, Bruh what, \
+tehehehe, I'm so confused, Ab what, Mormons being freaky ?, bc I am too, Yes, I just read through it again, To understand \
+wtf heas saying, LMAO, the more u know ammiright, So like like, They basically do it but don't, Yeah I guess, I don't get \
+it, I WANT ONE, WHAT THESE ARE SO WOW, LMAOOOOO, WHERE MY POOOKIES ATTTT, i14, i14, i14This man randomly carrying my sister,\
+i14Look how freakin cute this video is, I SAWWWWW, Laughed at ahttps://www.tiktok.com/t/ZT8SweBSw/a, i14Ummmmm, YASSSSSSSS, \
+JONATHAN WILL BE HERE U CAN MEET HIMMMMMM, We can have Friendsgiving at mine, But it will be a cutesy halal dinner, Hi baby,\
+I miss you, Wanna call later tn?, How are you feeling are you okay ik it's rlly hard to balance school and ur feelings w \
+everything going on in Palestine so lmk if u wanna talk specifically ab that anytime, Yaryoooorrraaa :(, I love you so much \
+baby girl, Thank you so much for checking up I love you, Yes bestie call me whenever please I miss you, i14Citty cat, \
+YAAAASSS, why are thou awake deanni, What happened pookieeee, Ummmm well I was watching videos of Gaza and now I got really \
+depressed and I canat sleep, WHATTTTTT, I wanna see u beat up someone I canat imagine that heheheh, I have an 8:30, i14, I \
+CANTTTT, I wish I can take all of your and your family's pain right now- no words can say how much my heart hurts for you, Ya \
+Albi please take care please Rest, Do you want me to come to jersey right now?, No no bestie it's okay wallah letas try to hang\
+out Sunday though I really miss you :), I want to be there for you in any way and if u want me to be there to hug u rn I will \
+come, I canat because of CEF meeting that day and going back to swat, So I will come rn if u want me to and we can talk and cry\
+and hangout and anything you need, Ohhhh :(, Itas okay bestie you texting me, checking up on me and talking to me is way more \
+than enough u canat imagine how much that means to me, I love you so much, i love you so much more, Youare amazing and I'm so\
+glad to have you as my best friend Mwahhhh Mwahhhh mwahhhh, I canat stop ugly sobbing I wish I was with u right now, Yara :(,\
+All of these people are martyrs and are guaranteed janna think of that :), ai a1ai a1ai a1, My dad just told me 28 of his\
+cousins in Gaza passed away, Bestie I'm in the car, Going home rn, Ok I just wanted to check in, I'm so so so sorry my love,\
+I know I know, I love you :(, I hope they find the most loving comfortable place in jannah, I'm praying for Allah to give them \
+the peace they deserve, Please tell your dad if you guys need absolutely anything at all to let me know and im so so so so sorry\
+for your loss, I don't have any words, call me when you want to talk but be with your family first and foremost, Inshallah, his\
+cousins let about 50-60 people from their neighborhood  stay in the building they own because their houses were boomed and all\
+of them passed away too, Thank you yara, Really, I love you, I wish I was there to hug my baby I'm crying thinking about not \
+being able to be there for you, I love you so much, Youave been here for me more than anyone yara I love you, I love you guys,\
+my rahoofie, I can prob do tmrw later at night bestie, Yes yes what time, I will let u know bestie I will be a little busy, \
+But Iall lyk, Yes ofcourse, How are you feeling?, I feel weird, I don't know, I was excited for so many things this week but \
+now it's all gone it feels like I canat be, Yeah I understand, I'm so sorry baby, And I know johnathon was gonna come and \
+everything so that's why it hits extra but at least during this impossible time heall be there to comfort u ai a1, Heas been \
+very understanding heas making a really big effort to stay informed. He even asked me if I still wanted him to come this week\
+because he knew exactly I was gonna feel this way before I even explained it to himthatas why I know that him coming is what \
+I need right now, Awwww ya habiby ya Albi, Im so glad heas coming rn this is perfect time for him to be here for you, Which\
+day is he coming again?, If you want tmw when we hangout we can also tel eunice and deanna bc I think theyare in Wayne too,\
+unless u wanna do just us then I'm more than happy for that too, Let me know how I can be here for u albi, Heas coming this\
+Friday, Yes yes we can tell them, Eunice came home with me silly, Oh true sawri, I wanna meet him and I think I'm lwk free next\
+weekend 34, I might be able to pu to nb, Please come and I know Hanna is coming Sunday night to visit us, OMGGG true, I forgot \
+ab that, Iall try t harfest, Weare gonna be in six flags Sunday until liek 6 pm, if I finish my 2000 word research paper by then \
+I will I promise u and myself, Ok slay, Just made it home, Okay Hehhehehe, I canat wait to see you tmw bb I need to squeeze u, I \
+miss you so much, I miss you more trust me, We were watching ur swatmsa stories and crying about how cute u are, Stop1111, I'm \
+gonna cry again 2, How are ur siblings doing, I miss zaido, My siblings are okkkkkayyy, Zaido is so cute he threw a fit refusing \
+to leave my room 10 min ago, He said he wants to sleep w me bc I canat be here next week, STOPPPP2222, YA ALBIIIII, I'm coming \
+home rn so lmk if u can hangout tmw, Hi baby, What are you up to today, Checking in how are you feeling, How are your parents???,\
+Give me mall hall when ur donee, Hi bestiiiiieee, All is good alhamdulilahhhh, I will I will, Allhamdililah, When can I see u \
+td mommy, I shall be home by 6:40 ish bestie, Hi bestie, Iall be home in 5, Slay I'm still at dalys house the second I get home \
+im running to u, sallys*, Weare on the way home rn bbg, Dropping parents off first and then coming to u, Should be there at 9, \
+Okay bestie, Omw, Here baby, Coming bestie, Garage or front door, Front, Rahaf Alsatari, i14, i14, i14, Oh my god Eunice what \
+????, Did they not tell you anything when you went home this weekend ??, I used your email today, I love you so much, Thank you \
+for being here for me bestie it means so much to me I love you <3, Awwwww babyyyy, I love you so very much rahoofie pls font ever\
+forget that, Youare literally my sister, Me and you for life baby, I'm here for ab thing and everything for u always., Habibti \
+heheheh, My baby girl, Are u gonna be able to come this weekend ?, Bro I was just gonna text u about that, All Philly schools \
+are doing a walkout, And tri co is joining, So I canat, I'm so sad, But it's rlly important bc we have been needing more actions \
+on campus, Itas okay bestie I understand, I love youuuuu, 222, And he was suppah chill 1414, Mmmm don't u always go through his \
+insta, Yes he is heheheh, Weare in air bnb, No silly we got an air bnb, Nooooo, Pookie what you meannnn, Hehehehe, BABIEEEE, HOWS\
+LOVER BOY, HOW ARE YOU, how you feeling bbg, Weare taking caties car and adams car, So yes pookie, It opens at 11 so wead leave \
+around 10, ?, Wead be back at like 6, i14Jonathan following a possum saying aI want to make him my pet a, HEYYYY BESTIIII, IM \
+EORRY IM SORRY, IM SORRY POOKIE I LOVE YOU WALLAH, I miss you, HOWS SIC FLAGS, also I have to grind rn before my soccer game, \
+but Iall call u later tn, i14, And weall fill each other in on everything, HEHEHE, TELL HIM I DAY HIII, YOURE SO CUTE, YES\
+BESTIE I MISS YOUUU, Is it the cheerleading thing, Or actual soccer, No I'm okay lmao, I canat keep up, Playing*, REALLLLYYY,\
+I wanna see u in ur soccer attire, Itas just for fun it's the Arabs against Arabs on campus, Palestinians vs Egyptians, I'm\
+playing as honorary Palestinian LOL, i14i14i14i14i14You guys are so cute, I don't know wtf I'm gonna do with myself when \
+this man leaves, I might, AWWWWW YARYOORRAAAAAA, Youare so cute 1, i14i14i14i14i14i14i14i14i14i14i14Dumpy hehehe, Oh girl,\
+Tell her to not bring this European nonsense into this ethnic household, Hehe, POSSSSTTTT, Youare beautiful mamas, Girla,\
+THE HECK U MEAN THOUGHTS, What the fuck, Girl no what, What did you say ?, Girl, Heas supposed give u reassurance when ur\
+being inquisitive or Wtv thatas not the point here, YOU KNOW, Jonathan said ait's so reassuring coming here meeting all \
+your friends and knowing youare surrounded by good amazing peoplea1, I love you guys, i14, Got it, I'm so exited to see \
+u bb, i miss u mostest everest and I kept telling my swat friends how much they have to meet u, I'm on the way back to \
+jersey rn when r u getting back home?, We can just talk bro, Idk abt yaall but I ainat making no presentations, No, \
+Pooookkiiieee, I kiss u so much, Yaraaaaa 11, I just got home 30 min ago hehhehehe, I misss u so much letas do something, \
+YAYAYAYAYAYA, yes we have to, But i def can do today or tmw, Cant *, what ab sat, wanna get our nails done and hangout, I\
+have work Saturday pookie, What time, 4:30 I thinkkkkk, Do u wanna do breakie sat? We can do AK cafe and nails, Okay so \
+real, Lwk same, Why don't we still hangiut and do each others nails, YAYAYAYA I LIKE DIS ONE, WOO WOO, I just left allll \
+my shit at Parrish tho, Do u have anything we can us, use, We can also just do breakie at home then since ak cafe is lwk\
+far, Yes I do, Slayyy, Yassss, Wtf u apologizing for, SERIOUSLY BRO, guys help can u back me up here, I'm sorry but last \
+time I checked he wasnat the one crying and losing his mind yesterday, Weare not telling u to break up with him bro thatas your \
+choice to make no one can tell u to do that just please stand your ground, When has anyone ever not been right, Please tell me,\
+PLEASE BRO, https://www.tiktok.com/t/ZPRv5LLGm/, Eunice, WHAT IS BRO WEARING, NEW SHOES UNLOCKED, Guys for Friendsgiving would you\
+like to have very fancy dinner on my huge dining table but no privacy, or have cutesy but not as fancy dinner on my basement \
+table except we have privacy., Itas up to you guys, Itas not like dining table fancy yk what I mean, But if we sit upstairs we\
+canat debrief in the same way yk., I cant do nails anymore tg bc im praying recently and I completely forgot I canat have nails\
+for that, also, happy thanksgiving my love I hope your time w your family is nothing short of pure joy <3 I'm forever grateful \
+for you and our friendship, I have halal nail polish hehhe, I love you yaryoora baby, I'm so happy to have u in my life mwahhhhh,\
+YAYYY, I love you more, I miss zaido Baby send me pics, I will heheh, Look, i14His finger bends so weird it's so funny, Bruh, \
+He such a lil unique specimen, STOPPPPP THATS SO SAD IM SORRY, I HAVE TO HEAR ALL AB HIS VISIT BTW, Thatas so cute that u \
+think of him in all the little things tho, NOOOOO BABYYY, BABYYY YOULL CONVERT HIM AND MARRY HIM ONE DAY TRUST, INSHALLAH BRO,\
+Praying for yaall srsly, I no want to skate, 14, Fax pookie, So valid, Love you, WHEN U STAND UP MAYBE, FUN FOR YOU, 4, Cuz \
+they said the wanna take pics, 5 is dark and girls said they wanna take pics outside, U really can, I'm sad, BUT I MIDSSSSS \
+HIMMMM, LOOK HOW CUTE HIS DIMPLES ARE I WANNA CRY, Letas, Eunice, Should I come earlier queen to help set up?, My mommy freee,\
+No bestie it's okay dw, I'm going out rn with mama to get some things, Say wallah like pls let me helpppp, Pookie i will \
+probably be rushing trying to get ready and do my makeup and stuff, Okayyyy fine, Heheheh, I want to spend every moment of\
+my life with you but okay, You can come and watch me do my makeup, Tehehehehe I might just take you up on that!, Will \
+update:, ., Okie heheheheh, Actually come like 30 min early so u can help me with fit, I'm so, Indecisive, Help, I got u\
+bbg whatas up, Indecisive w what, Send, My fit, Youall see, When u come heheheh, Ok what r the option, Yayyy, So Iall \
+come 3:30?, Or 3?, 3:30 bestie, Ok noice, Rn I'm finishing up an essay and Iall get ready asap and come, I have a question \
+for u, I'm going to get my eyebrows done rn so no rush, Ask bbg, Should I blow dry my hair w the brush, Or curl it then \
+hairspray then brush it to get good volume plus slight curls, The blow drying will have a nice effect on the bangs and\
+make them swoops but ik thatas not gonna last long, This this, Hehehe, But the curls might be too basic idk, Okok, Yes \
+for sure curl then, I wish I did my heartless curls smh, Itas okie pookie thereas many options, i14This is what the curls \
+would look like, And Iall send pic of what blow drying would look like, Bc I canat choose, i14i14Itas nice on the ends \
+and curls but it's more straight hair, YARRARRA, THIS ALL THE WAY, NO DEFINITELY CURL, I LOVE IT, AAA OKOK, thank you I \
+was so indecisive, Hehehe no worries bestie I got u, I CONT WAIT TO SEE TODAY BBG, YAYAYAYAYYA CANT WAITTT, Did u say yes,\
+Mom said we have to wait until 5:30 ish to eat, I feel as though we should, BRUH IM RUNNING AROUND, Iall come at 4?, \
+STRESSING, Yes pookie whenever ur ready, Thank god bc I j started getting ready, I'm not even home yet I went to buy \
+some things, Hehehhehe, Stopppp, U couldave told me I wouldave gotten whatever u needed bb, Itas okie bestie I went \
+with my mommy I know everyone is busy doing their things too, I'm never too busy for you, I already set everything up,\
+Now it's just other things that my mom and I have to do, Itas okay besties, U can come at 4:30 besties, Mama needs me \
+to go to shop rite I don't think I can come early I'm so sorry, Can u send me pics of ur fits and I can help u choose?,\
+Its just that we have to wait for the turkey, Itas okay bestie I already picked I think catie and Eunice are coming \
+rn dw, Okok im so sorry aai aai aai aai, Donat apologize yara it's okay, Yes, Garage, Garage open, i14i14, What pics,\
+Yayayayaya, I like mirror pic it's so different hehehhehe, But yes maybe story, bestie my mom send I canat do breakie\
+td bc we have a house guest and it's rude to leave, said*, I'm doing my makeup 2, but she said we can go to the mall,\
+Or do something after breakie like grab coffee, We can still go to Jackie smalls for coffee?, Oh okay, I wasnat gonna ditch u \
+shawty nawr, I have work later though, And I'm hungry, Itas okay bestie we don't have to hangout today if you have guests,\
+Wallah we have all winter break to hangout, NAWR I WISH TO SEE YOU, you have work at 4 tho, We arenat gonna take that long \
+plus I can drop u off, If it's just coffee yk we don't have to go to the mall, When?, Like 12?, Okay, Well, I think I might \
+ask mama to go out for breakfast I'm just sitting with my makeup now and I'm hungry, But we can go for Coffee at 12, Babyyy,\
+Ok let me try begging mama rq, No wallah it's okay stop it's fine, Iall still have breakie with mama, Okok good I want u to"
+
+# go out I don't want u to waste ur makeup, She said we can go out for coffee after breakfast, Okay Iall see when me and mama \
+# are back then, Okok lmk baby, I have to go grocery shopping before work for Rutgers things cuz I won't have time tmrw or \
+# today to do that. So idk if weall be back in time, Itas okay we we don't get to hangout today we have winter break, Itas \
+# okie, But Iall try, I have to go grocery shopping for swat too if u want we can go to, Tg, Unless thatas something u wanna \
+# do w ur mom which I u derstand, well do winter break if not it's okay, Weall see weare gonna go out to eat rn if weare back \
+# in time then we can go tg, Okieeee, Lmk shawty bae, Hi pookie, I'm On my way! Back home rn, Lmk what u wanna do, Bedtime \
+# before 2 am one is so freaking real, OUUUU, Do u wanna go grocery shopping, Yes hehehe, U can drop me off to work right \
+# after ?, Yes mama, Ok let me ask mama rq, Shops rite?, Can we do stop and shop, Whatever works bestie I just have to be at\
+# work by 4:30, But I feel like it's a hassle bestie cuz Iad have to drop my things off back at home first, Like if it's a \
+# hassle we can do something else, I can drop ur things off for u, Iad be happy to actually, whatever u want bb, If u want me \
+# to just come over Iall do that if it's easier for u and u don't have to rush getting ready for work, I'm down for anything, \
+# Yk me, Yes bestie lets do that pleaseee, I got a few things I needed from Paterson, Okieee, Omw, Yayayayyayay, Here looks,\
+# Should I come thru front or garage, Front, Okie coming, YAYYYYYYY, Pookie, How do I buy my Amtrak, Idk I'm just girl, I alr \
+# bought it for u silly, Check ur email u shouldave gotten the tickets, Lmk asap if u didnat, I oh wait, I'm so stupid, I forgot \
+# that we bought them tg, Hehe, LMFAOAOAOAO, IM JUST GIRLLLLL, you really are just a girl, I'm sawwwryyy, Jeff is pro Palestine, \
+# WOOOHOOII, U look so cute, rahaf, Yes baby girl, Donat scare me, Wtf, can u send me the names u have of your family members \
+# in gaza allah yerhamon that were in the building? weare doing a martyr display demonstration in swat and writing the names of \
+# every martyr on a mini white flag and the list we have isn't updated but I want to make sure your family is includedai a1, \
+# Awwwww yara, I'm gonna cry bro, I love you so much, I love you more, Yes Iall ask baba in a bit, Okie, HUHHH, Bro what, TALK, \
+# WAHT U MEAN HE BLOCKED U, Like as a joke ?, Check instagram, Did he block ur instagram, NVM GUYSSSS, HIS PHONE DIED, Silly \
+# girl moment, lmk when u can bb bc weare making the flags rn, Yes bestie I'm just waiting for baba cuz heas been on phone call, \
+# okie yes no rush ofc ofc, I would never block you pookie, I love you pookie we all love you, Youare just a girl, Hehehehhe,\
+# POV I fell asleep right after I texted u this, I promise tmrw morning bestie, Okiee, POV my mom asked me if I'm in a \
+# relationship, And she said that if I Ian, She said that, aGod is watching me a, And that if I'm in a relationship with a \
+# non Muslim guy then I have to fix things and end things, I said how do u know, They said that they have a feeling, aWho \
+# were the two guys with you in six flagsa, aHow many guys have been in the apartment a, aI'm gonna start driving to New \
+# Brunswick randomly without telling youa, aDo you think we have a problem with you being in a relationship???? No we don't \
+# I would just like to know if u are. Know ur limits and pick a good Muslim guya, My mom, They don't know guys weare there, \
+# Hi kept denying that I'm in a relationship, Lol, She said tell me whenever the time comes, I have some suspicions but \
+# idk if thatas od. Basically at six flags this very Arab looking uncle was staring at me and he looked sooooo freaking\
+# familiar bro and he was staring so much while I was holding hand with Jonathan so what if that uncle knows my dad and\
+# is an OP, This is not funny guys, Nah clearly I don't, Does she have access to my phone ?, Is there a way, UGHHHHH, \
+# SHOULDNT HAVE DONEEEEE IT, THIS IS WHY HE DOESNT LIKE ME, HE HATES ME NOW, She said she needs to know if I'm in a \
+# relationship and I would literally tell her if it wasnat a non Muslim Hispanic guy from Texas like I would tell her but\
+# I canat, I don't know what to do, Why canat I just love someone and be loved, Likeeeee, Why is that not okay, Now I canat \
+# even see hime if I have to come home every weekend, Hi bestie, I'm not so very okay, Group chat, Itas fine, Iall just, \
+# i14Hereas the list of names, Thereas more, But I'm trying to look for their names, i14Lol, i14i14i14, I don't know guys, \
+# I really don't know, Can you guys help me brainstorm, Who else, How else would she have known, Cuz the main thing for her\
+# was six flags, No because he was staring so much, Lien Iave never met him, Yeah k think so, But, She was like there was \
+# one or two guys with you at 6 flags, I said there was one man and he was Euniceas bf and she was liek a why didnat you tell\
+# me a guy was going w u a, And I said because it didn't matter, It's not like it's my bf, And then she kept insisting I had \
+# a  boyfriend, Bro what, Ur not Muslim, Ur not her child why would she care if u had a boyfriend or not, She was like, 1 or \
+# 2 I'm not sure, Itas like someone told her right, How else would she have known, Because he was staring so much, I never met \
+# him in my life, But he was staring so much while Jonathan and I were being a lil cute, Right, Isnat it so unfair, I see my bf \
+# once a year and then everything flips on me, Am I really doing something that bad, 3UUU UUUUU 12 UU U UaoU U  UaU UaU U31a UU \
+# U UU UUUU UUU U  UU3UUU UU UUU UU UUU 1UU., This is the full one I found it, Oh my god, I'm so sorry, Rahaf I canat imagine \
+# the anxiety ur feeling rn, I'm so so so so so so sorry, What is going on w ur mom rn, lmk what ur dad says shawty, Heas not \
+# picking up, Itas okay babyyyy don't worry about it, I just wanted to offer that space for your family to be honored and \
+# remembered, I just read full gc messages, Do u wanna ft later and talk about your relationship with god, I love you so \
+# much and he does too wallah, Thank you baby girl I love you, Yes please I need that right now, Ok I have back to back meetings \
+# till 9 does 9 work for your schedule, Yes pookie 9 works don't worry, Okok, How is ur day, What were u up to, Nothing bestie I \
+# had class at 12 then went back home to eat now I'm in class again, Abt what, Tell me please, So much going on, I have my AirPods \
+# in, So tell me, Ummmmmm, Basically, My mom knows everything, Like everything, I don't know, She just knows everything, And \
+# said I have to end things today, Why is  bro not letting me break up with him, I don't know how she knows everything, I have no \
+# choice, And then rn I'm trying to break up with him but I genuinely cannot, We don't know how she knows anything, We really don't,\
+# She told Yara basically the same shit she told me like wow Omg she canat believe I would do this and she feels like sheas \
+# losing me. Idk what she thinks yaras supposed to do, Guys, What do I do, help, Please, Should I get a flip phone and text him \
+# there, Lol, My mom is coming so don't text nothing crazy in case she looks through my phone plsss, I freaking hate my mom so \
+# much, Iave never hated someone so much, Ever, Hbb whats going on r u okay any updates, i14Same shit, Baby I'm sorry2222, I love \
+# you so much, i14Get you a man that will email you 141414, Idgaf, She can ft us, Then what, What she gon do ooo, Itas okay so \
+# what do you want us to do pookie, Tell us, Hi my baby, How are you doing, I miss you and I canat wait to see you tmw, i14Also \
+# this^ friday when u come well go to Ragadas apartment for Turkish coffee and asli is gonna read everyoneas coffee cups, Hi baby\
+# girl, I'm doing ok, I miss you moreeeeee, WHATTT, WHO SAID DAT, And Catie yesterday said I'm so fat that I almost fell, I said \
+# BAD PEOPLE LIKE YOU KNOW WHO, WHATTTTTTTTTTTTTTTT, This crazy, Deanna, If u do not, Make the tik tok, I will, Cat, i14, Yaryoora\
+# will we be able to eat when we get there we will be starving so there anything open or around, Oh okie np, I thought we were \
+# doing tea at Raghadas no?, Do u have a revlon brush or straighter or such, What is this hair, I no like humid, If dinner is at\
+# 7 when do we leave, I don't wanna be late it's rude, Me too, Then we should leave now no? We still have to walk to ur dorm, Oh \
+# sheas on a zoom, SO FUNZIIIIIEESSSS, i14i14i14, i14i14i14i14i14i14i14i14, i14i14i14i14i14i14, i14i14, i14i14i14i14SO \
+# PWEEEEETTTTYYYY, i14, i14Yaras friend looked so aesthetic with her kuffiya, Hehehe, i14i14i14i14i14i14i14i14i14i14Dump, bestie, \
+# for tmws sit in and rally weare doing testimony readings, if u want obvi I just wanted to give u that space, Hi baby girl, If I \
+# have time I might bbg, My dad is in a conference thing in another state I think tho soooo idk, i14U see us what u do, aAre\
+# turtles ediblea -sabreen, i14i14Pov: weave been dating for 5 months, HOW DOES IT KNOW, HOWWWWWWW???, Hello, How yaall \
+# zooiiiiinnn, i14Catie when Adam and Eunice, RAGHAD IS FAKEEEEEEEE, JUST SAYINNNNNN, no fr never thanking anyone again so \
+# embarrassing, JUST SAYINNNGGG, HIJABBB PARTY, Omg and when we went to Swarthmore, She randomly put her scarf on her head and \
+# was like a guys what if I become hijabi I wake up and think about it everyday a, Does RAGHAD know, BEFORE US ???, Yup, But, \
+# Her pfp, TAKE A BIDEO, PLEASE, VIDEO, WE LOVE YOU POOKIEEEE, Hwhehhehehe, Youare glowing, i14i14, My mom cried, JUNGKOOK AT THE\
+# DOCTOR PARTY ???, Omg, i14, Can u guys hear, Please say yea, Guyssss, Like actuallyyyyuu, R u going to class, i14, She's so \
+# indie, i14, Ummmm yeahhhh!, Heheh he, How we gonna know ur shade, Or ur size, Or anything, Still not clear, Or ur laptop size, \
+# i14, From last year, Bro takes off her makeup with paper towels, She doesnat wear sunscreen, NO SUNSCREEN IS CRAZY, INSANE, \
+# Sheas just a gorl, Weare in calc, Do u know the Dubai housewife Deanna, No, This lady, Shes Palestinian married to Mexican guy\
+# in Dubai and theyare so rich, Me too bro, I live through her, the way I forgot to respond I'm so sorry, it's okay baby we have\
+# a vigil like every week and read testimonies every week to make sure we don't ever desensitize ourselves from talk the lives \
+# taken away, so if you ever have anything to say thereas always space, how are you bb I'm sorry I couldnat check in earlier, \
+# Iave been meaning to text you all day baby girl, I don't even know what to say, Because, I am so proud of you, I love you so \
+# much, And Iave never been happier for anyone before, stop 1111, I'm gonna cry, I love you, I'm okay babe I miss you alot, Thank\
+# you<3333, I miss you more wallah, Like I literally opened messages three times and I was like what do I even say I'm just so \
+# proud of you and I'm so happy, Literally cried with my mom on the weekend, STOPPPPPPPPPP, sheas so cute I canat, I'm so glad I\
+# have u in my life 222, Deanna 11, NOT THE WHATSAPP BRO, THE ARABS ARE GETTING TO HER, Yeah I don't like her rn but we bonded \
+# over how much we love you, Why don't u like her shawty, I just don't wanna be around her because I understand her completely\
+# but I don't wanna say anything wrong and its so hard balancing her feelings and mine at the same time and JUST UGH, Awww \
+# baby, But that says a lot about how youave progressed in the situation like at least now you can see and respect where sheas\
+# coming from, So this progress will only continue, Iave been seeing yara, And youall be able to truly heal down the line, I \
+# knowwww, I just don't know whatas right and whatas wrong anymore lol, Habooba, Youall be okay, I have no doubt that you will\
+# end up doing whatas right, The QUESTION IS WHAT IS RIGTH ?, Not to be a hijabi () but Allah has it written out for u to \
+# learn from every small thing and I think you will esp in this situation, NOT TO BE HIJABI IS CRAZY, I love you bro, \
+# LMAOOAOAOAOWOAOA, Thatas something for you  to reflect on and see where ur priorities lie mama, Mhmmmmmmmm, How about you\
+# babe, How do u feel, Tell me tell me, Feel about what, Like in general?, About, Your life dafuq, Um very relieved and \
+# excited to be on this religious journey, Lol, Youare so silly, Hehehehhe, But very sad and stressed when I think about \
+# finals and Palestine, So it's a mix, Trying to balance the two and not make them mutually exclusive yk, I also like abood \
+# which is so crazy bc what, WHATTTTT, HELLLOOOO, At least I feel very comfortable and safe and happy in his presence, BABA \
+# ABOOD ????, LMAOAOOOOOOOOOOOOOOO, Not when u say that dafuqqqqq, but heas such a cutie, Heheheheh, Awwwww o, heas not my \
+# usual type which is why I'm confused, I am also confused, Maybe it's your hijabi type, HAHAHAH, Rahaf I literally don't \
+# know who I am anymore, I feel like I'm living another girls life rn, Like life is not real, Im just a roaming presence in\
+# the abyss, Yaryooraaaaaa, Youare just a gorl bro, No literally, As long as it feels good and right, and I need to up my \
+# hijabi styles like I made this decision wo the proper arsenal gotta go get another closet rq, It does, Like this is in a\
+# good way I think, But wow I feel like changed, I hope everyone still likes me at home, I'm so happy for you baby girl I\
+# wanna give you a big hug, I love you, WHATTT, what do u mean, What if Dan fires me, What if sarah thinks I'm too\
+# religious and thinks I would judge her or she wouldnat wanna share things w me, ^and our friends, Like I don't want my \
+# past dynamics to change, If he does then heas Islamophobic dafuq, Babeeeee, The dynamic will stay the same trust, Youare still the \
+# same yara, Anyone who knows u well enough will know that, That this doenst change anything, Yes I think so too, I'm not worried or\
+# anything I'm just yapping rn, How is college mama, Yap all u want to me bestie please, Is the living situation any better?, \
+# Your yapping is the best, Mwahhh, I wish to hear u yap, Oh one more thing, I GOT MY PERIOD ai aai aai a, Ummm currently catie \
+# has decided to be rude today, And not to talk to anyone, from my entire time at swat I only got it once, WOOOWWWWWWW, RARE\
+# OCCURENCE, it was normal and everything but after being stressed and after Oct 7 it literally did not come till now which is \
+# after the hijab and starting to feel not as shitty, Oh!!!!, Babbyyy, Only way is up from here, Wish u could visit me if u didnat \
+# have finals, U can see the sit in urseld, and see our events, ugh, I wish to come see as well you guys are doing amazing, If not \
+# now maybe spring semester heheheh, During silly week, But basically, In the morning it was really windy and all of our hairs \
+# looked messed up and crazy and then sabreen and I laughed bc catieas hair looked so funny cuz of the wind and then she pinched me \
+# and said we're mean, And ignored us all day, Uh, What, wtfaai, Um yeah I know, Basically, Be so real, Why are you living with \
+# children, I personally would tell her it's a mindset, I think everyoneas gotta put their big girl caps on, And be a lil mature so \
+# that running a household can actually be manageable in a suitable way, I personally would tell her to get over herself and that\
+# the world doesnat revolve around her and that sheas dirty and that she has to clean her room and the garbage bag full of milk \
+# boxes next to her bed. And I would also tell her to take her hair out of the drain and also I would personally slap her, But thatas\
+# just me personally, I love her so much, Sheas my bestie !!!!!!!, Oh!!!!!!, Okay then, Very valid im sure i could echo that \
+# sentiment if i was living w yall too, Sabr sabr sabr, UUU 1U UU U, you and sabreen shall be freed one day, i14Makes me smile \
+# whenever I see my phone, I'm literally gonna cry, Youare so cute, I love you so much, I'm gonna give u the fattest hug when we \
+# all go back home, I love you more pookie and I'm giving u an even fatter hug, Go to za date pookie, Baby girl I was in the shower\
+# u called me ?, Pick up pick up, Come backkkkkkkkkk, Yeah but they got it back, Wait me toooo, I would love thattttttt, when is \
+# ur last final, My last final is Monday the 18th, mine is Tues 19th omg, U can come after ur last one, What time does urs end, \
+# i14omg u can take this one, ten bucks, Thatas literally four days here, Yay, Omg, Iall have to talk to mama bestie heheheh, \
+# YAYYY, yes ofc and if u want me to talk to her lmk, Okie Iall lyk heheh, I think sheall say yes, esp if u tell her I'm sad and \
+# I need u, and I feel lonely bc I canat tell my family ab the hijab so I feel disconnected from home and ur my home and I need \
+# you, bc it's true rn and I wanna cry, i14, I'm just a girl I want my bestie aai aai aai aai aai aai aai aai, Babyyyy girl, I \
+# love you so much, I will try my best to come, I love you more, Youare so cute, Hehehe, 2ai a1, Mwahhhhhhh, Kiss kiss kiss, i14,\
+# Im literally crying rn, i14, He thinks heas funny, Were u actually crying baby girl, lol, Maybe, Whyyyyy, Talk to me, Bc I'm \
+# sad, Rant, I am a rant box rant rant, I never told you think but my great aunt passed away like three weeks ago, Or four idk, \
+# I considered her my aunt tho, And now I'm just so sad she never saw me with the hijab, Yara :(, But he doesnat know any of this\
+# btw so he prbly thinks I'm crying for finals stress or something, I'm so sorry, Trust she is watching from above, Trust, She \
+# knows, Was she from your moms side ?, Have you been bottling all this up, Bro, Tell me things, Literally text me I'm right \
+# here, I love you so much, I love you more, I'm sorry, I grieved and mourned and healed so I didnat wanna bring it up again yk,\
+# But now that this happened I wouldave wanted for her to be here specially bc she was very inspiring, Liked aWas she from your \
+# moms side ? a, Okay soooooooo, Abood came upstairs while I was making tea and is helping me rn and being so sweet I'm gonna \
+# cry, I told him what happened and why I'm upset, I literally love him, Donat apologize babe what, Sheas watching from above\
+# bestie, Awwwww, Liked aDear secret Santa take bow stuff off my list causeaa, Heas such a cutie pie yara i can tell that heas \
+# a really good person, FaceTime me whenever u can babe, I will I will, https://www.tiktok.com/t/ZT8mn7ddF/, My baby 1, \
+# MASHALLAH, Bestieeee, Wonat the buttgers girls wanna come if I tell them I'm going, Umm tell them ragad asked u personally \
+# to come, Hmmmmmm, Spillllllll, i14i14i14i14i14, Just speak boi, Explain pookie, i14, Bro, Yes, Weave been here since 10 in \
+# the morning, This is our new home, I am, Going, Insane, No because when we stay home we don't do nothing, We just dilly dally,\
+# Sooooo, If we go to the library, We can study more than dilly dally but also dilly dally, i14Ceilings caties version, i14, \
+# Ehehhehehehehe, i14, HEHEHEHHEHE, i14i14i14i14i14Hehehehhehehehehh, An excuse u can use is like u finishing ur exams before \
+# everyone else, Yeah but sabreen was like can u go after my exam and wait a day when I told her that I might go see u, Okay, \
+# I will seeee, I asked mama yesterday she said bnshof, i14i14, Lmk what mama says, Huh, Context????, With what money, How he \
+# gonna pay the mahr, Ask him, Moms do that all the time, Bestieeeeee, I have like 2 big final papers after my finals tmrw I \
+# rlly don't know if I can come I need to finish them, And we also have an appointment to see a new house Wednesday and I have\
+# to be thereeee cuz I found the house, Omgggg, I lwk have a paper too and I totally forgot ab the date im going on w ali, Well\
+# see each other at home it's okay baby, I miss you so dearly, Itas okay poookie Iall see u in Wayne hwhehheheheh, I miss you \
+# so much more habibti, Thatas so sweet, Removed a question mark from alooks like I will not be passing a, Bro what, ENOUGHHHHH,\
+# BRO, KHALALSSSSAW, i14, i14, i14Euniceas theory about soulmate lines, i14, Bro catie is calling trolls fine, U mean nj?, \
+# i14Sheas so amo coded, i14 Not our perfumes costing more than our apartment, Deanna do you know if mamouns falafel is Jewish \
+# owned, Where are u, I'm so confused, Context, i14I'm so confused, I pick up yaras FaceTime to this, I was at an interfaith \
+# event for Palestine, Ragad was speaking, But I FaceTimed u bc u got upset when I didnat ft u for Turkish Sufi music, Me and \
+# Eunice have work, i14Bro is in disbelief that I am here, LMAOAOOAOAOO, Oobssss is crazy bro, I literally canat, Anyways!, He \
+# my number one pooks fr, What about baba abdo, He gave me the ick, Sheri, sawri*, Heall always have a special place in my heart\
+# ofc, Oobssss, HELL NAHHHHHHHHHHH, Why ick, Idk he just gave too much baba, Well talk when I see u, But I wanna know what \
+# youave been up to I miss u, Yes bro please imysm, Nothing pooks, How are  u and Johnny boy, Whatas the situation like now is \
+# it the same as when I last saw u, Weare doing better I think weare more confident in our relationship now. Like idk I feel \
+# like we know what we need to do idk how to explain, I feel better though about everything, But yes, When I'm home, We don't \
+# call at all, Just text, Mmmm I see wait like what do u mean know what u need to do, Be careful bb, How is ur mom w all this \
+# has she asked u ab him, Like idk I have more clarity I know what I want, I know whatas right for me and whatas not, No sheas \
+# been normal, 2 weeks ago bro she asked if we had done it, HELLO, PAUSE, WHAT, Jonathan is right for me. He will always be. I \
+# can sit here for hours and tell you how much heas done for me it will never end. Bro a couple weeks ago he went and talked to a \
+# sheikh???? Like hello? I didnat even tell him to and he brought it up a week after he did it and I literally started sobbing, Bro I\
+# think she just overthinking, Cuz sheas going insane lengths, Liek, I think sheas just making assumptions, WHAT OMG, Thatas so cute \
+# hello, What did they talk about, Stop thatas so sweet, Damn, But she hasnat asked about him again since then right, The sheik is \
+# helping him learn and is sending him things and resources to read. And he told the sheik about me and the sheik said that if me and \
+# him really want this to work then we have to basically Keep things halal and start fresh, Nope, Yessssss omg omg, Love this for him,\
+# I agree w sheikh #halal, Yes so we agreed that no more steamy shit if he does come here, This is a step in the right direction I'm \
+# so proud of you, Thank you baby girl, Heheheh, I want you to know u can always talk to me about these things even if I'm hijabi and \
+# religious now like I don't want u or any one to think I would ever judge them okay, Like even if things were to get steamy u can \
+# still tell me about them, And Jonathan told me that he would really like it if I wore the hijab when we get married like I never saw\
+# that coming I literally cried bro, I know yara tf, U don't have to tell me, Sropppp, Well things happen, But idk i feel like the \
+# boundary is set and it not only me who wants it, Thatas very true, I love you so much, I love you so much more heheh, I'm very happy \
+# for you, But I'm going to stop stressing about the future because as long as I'm trying my best to fix things NOW and make an effort \
+# to do what I feel is right now then things will work themselves out in the future I have so much hope., Babbyyyyyyyyyyy, Weare rlly \
+# in our grown up era, Yes bro it feels so weird, WHY DO I HAVE TO MAKE SUCH BIG LIFE DECISIONS IM JUST A GORL, RIGHTTT, Like we gotta\
+# think ab the future and shi now, i14, Heas so cute, Yara you know he likes you right, I think he does yeah, Heas so bbg, like ooobs,\
+# Yeahhhh no shittttt, Oobsiessss, Did u, Surprise ur mom, U didnat say anything, In the gc, I surprised everyone tehe BUT MAMA being\
+# MAMA alr knew somehow bc shes got a mothers heart, She literally said that it dawned on her that the surprise would be in a hijabi\
+# like help I never gave any hints or anything idk how she knows everything, Baba almost cried, BRO HOW DID SHE MNOW, KNOW, like \
+# thatas so specific too, U shouldave recordeddddss, RIGHTTT IL, IK, Sarah did but missed his face in the vid bc sheas silly, SEND\
+# IT TO GC I WANNA SEE, Lemme get ready for work rq and then answer everything I. Detail, I don't feel 18 years old, How old do \
+# you feel pookie, I don't know but not 18 for sure, I think I hangout and talk w old ppl too much, Like if u read me and \
+# Ibrahimas convos I'm literally a mother texting this man, I dont hate it i just feel interesting, Thatas always a good thing \
+# no?, I noticed, Itas also cuz heas too Arab, LMAOOOOOOO, Oh for sure, No literally, But it's not anything bad it's just \
+# something in my subconscious I keep in mind, I'm still VERY much silly and myself, Idk I'm just questioning whether or not I \
+# need to get more friends my age so I don't get sad when all my besties graduate, I mean I'm sure youall me more people around ur\
+# age soon or at some point bestie, Also, The same way raghad is with you hehehehe, Awww true, But I don't have the patience for \
+# freshmen, I don't even got it nowa i, So Iall pass but thatas cute to think about!, Itas not like ALL of them are gonna be \
+# immature, yeah true, I'm sure thereas someone around our maturity level likeeee, Inshallah, Inshallah baby girl, I feel fob like\
+# rahaf just read our conversations I literally canat, Idk who I am anymore fr like this is silly, Itas cute but silly, Ummm yeah \
+# def new fob yara unlocked, Love to see it, i14i14Locked in!, You look so beautiful yara, Liek, I literally see it, Stop \
+# baby111111, Thank you I'm literally gonna tear up, I love you so much, You are za shams and za gamar at the same time bro, I \
+# love you more heheh, Something head say fr, Ibrahim so down bad for u bro, heas so cute, How did this even escalate, Sometimes I\
+# get the ick when he too fob tho, Ooobs!, when we went on the date likterallt three days ago, Weave just been texting nonstop lols,\
+# Yeah idk how youare doing it the ick wouldave gotten to me bro, He came with me to the train station and carried everything the \
+# whole time and we just talked on the bus it was cutesy, Aewww, He tried to come inside the train to put my suitcase on top for me \
+# but the worker stopped him He made sure the worker got my bag tho and that I didnat carry it, Stooloooppppppp, i14i14me when we spa\
+# day, Well I was planning on going to this poetry reading even in Philly from a poet from Gaza and he asked if we can do something \
+# after my finals so I just said yeah sure u can come with me to this event if u want, HELLOOOOO, WHAT IS THIS, Bc heas VERY \
+# politically amazing and critical (tell me to expand on this when I see u) and I knew head enjoy the even but I asked him as a \
+# friend bc we werenat like that at the time, I CANTTTTTT, So we go and then after we go to a hookah lounge then I feel gross after \
+# bc I'm not like that anymore and he was so understanding and amazing and we just talked at the train station thatas when we missed\
+# the train, Did he wanna go to hookah ?, And didnat realized we missed it till lil half an hour after even tho we were facing it \
+# but just looking at each other talking the whole time so at the end we ubered home lmfao and then the next day I came back to \
+# Wayne, IVE SENT THESE BEFORE U FAKE, LMAOOOOO, heas literally just a girl, No he didnat he thought I said I wanted to but I didnat\
+# I said thatas what I thought he said and it was so silly, I'm sawry bro my phone doesnat load all the pics u guys send sometimes \
+# my storage is 141414, AHHAHAHAHHA, U guys are so silly 3anjad, i14i14i14i14, Heas such a cutie heas just happy to be there, Are u\
+# SURE U DONT LIKE HIM, ARE U SUREEEEE, I enjoy spending time with him and he has a special place in my heart always, I don't know\
+# if it's romantic just yet, Heheheheh, Thereas no rush pookie, I love you, I'm happy youare happy, I love you more and I miss \
+# you  I canat wait to see you, How has being home been, Mehhhhh, Iave been working ever since I got here soooooo, i14The duality\
+# tho, Bro what the hell???, HUH????, Pookie do u want to elaborate?, Okay but why would he say that to u? aDo u get off on \
+# doing thisa, Liek even if heas scared he has no right to say that like does he think u did that on purpose???, i14i14My dadas\
+# familyas home, The ones who survived were able to leave to Egypt a few weeks ago alhamduliallah, Itas okay Pookies the best \
+# we can do right now is to pray214 they will all get their punishments one day, I sorry I forgot to tell u we ended up closing\
+# early bc of how slow it was, I love you more habibi, Nawrrrrrr, What did yall end up doing, RAHAF, i14, WAKE UR ASS IP, IM UP\
+# IM UP, HOLD ON WHELELEIE, WHAT DO I DOOO, IT IS ALL A MINDSET, UMMMMMM, UMMM, THATS SO CUTE THOUGH NGL, HELLO COME BACK, \
+# HEKEKEOWO, Hey, Hey, Speak, i14i14i14i14i14, Did u get my pics, Yes, i14i14i14, So real bro, I don't want ice skate, We did \
+# ice skaiting last year and u guys forced me I ainat doin that, i14BUKITOOOOO, Rahaf, I don't know if I made a mistake, Like\
+# what about abood, Whatas that, Why does everyone know, Wtf, I'm so confused, HAHAHHAHAHAHA, WHAT, whyyyyy, Ummmm yeah what \
+# abt him?, I though u already established that u don't like him, Like look at this picture, i14, LIKE HE VOLUNTARILY SENT \
+# THAT, why is he posted up like this ., And abood is abood, Whatever idk im just gonna see where the ride goes, Tide, How \
+# cutie he looks in the pic, While my man is literally silly, Did I choose the wrong Egyptian, No jk I love my man, This is \
+# just my anxiety in the way, Sorry, Ok, Will go sleep now, i14I have enough clarity form this, Heas so cute, Did ur dad say \
+# yes?, I CABT ASK MY DAD HES BEEN ON GHR PHONE FOR 30 MIN, LOLLL, Baba said yes hehehehehe, But u need to give me a few to \
+# get ready, YAYYYYY, yes baby Iall be leaving in like 20 and, I'm like 15 away from u, So u got time, Okayayayyayayay, On my\
+# way!, I'm here, Be there in 2 pookie, Yes like what, Wait guys whatas the plan tmr, Hehehhe wait pookie, U will get \
+# mandated, Mansaf, Mmmmm love get mandated, Bro I think, Ur cousin, Is here, Actually, i14Omfg, i14Degrading kink unlocked,\
+# AW HAHAHAHHA, BOI, bro is this close to calling u mommy 14, I CANTTTTT, Do you wanna go shopping today, Dost thou want to\
+# go to willow Brooke in like two hours, Pls pls tell me u don't have work, Ok we leaving at 1 how does that sound, Like \
+# 1:15?, Ummm, Lemme, Ask mama sheas showering rn, also, I just remembered, Thereas a big chance she will say no bc my \
+# cousin from Saudi Arabia just came today, NAWAWWWWRRRRRRRRRRRRR, I will still ask pooks, Okie lmk asap, Pookie u can go\
+# I don't wanna hold u back, Nawr what do u menas, Mean, I'm not even ready yet if thatas what u mean, Idk, I canat feel,\
+# Tell, WHAT, who, Where, i14, Do u know this lady, In the back, We took walked out to qahwah house, LMAO YEAH, TIGHT, \
+# IM RIGHT, YEAH BAHAHAHAHAHA, IM DEAD THATS MY OTHER COUSIN NARINA, And ur little cousin is here, Ummm, Whatas her name \
+# www, Mmmmm, Yeah Jenna, Thatas so funny I'm at her house rn LOL, Why are they not with u, I'm here to visit tete, Plus they didnat\
+# tell me smh, I'm not close w marina, Narina, Bro the little one is so cute she keeps looking back and smiling at me, Thatas tima \
+# sheas so adorable, She speaks better Arabic than me, Sheas so silly, She's so freaking cute my baby fever going crazy, I know 1, \
+# This picture goes crazy, Ur dad LOL, Heas so cutie I love my baba, I love him sm, My mommy, Is at stop and shop looking for houses,\
+# Actually sheas at shop rite not stop and shop, Hanna and sabreen I see u, Yes we just left, I'm gonna try stop and shop, For \
+# houses, What chips do u guys want, i14, Yes, Fo u guys want cannoli chips and dip, I'm getting one house, Shush, I love yaall but\
+# the reality is I ainat makin it there by 2, I'm still not home, I say no to, Yes, Me too I pull up in pjs, We can take pics on \
+# pjs, Omw, Here, I want pajamas, Okie heheheheh, Mama keeps asking if u liked the Mansaf, I just texted her I completely forgot \
+# this morning, I loved it sooooooo much it was amazing, Girl talking to him is not it like what did I get myself into, I don't like\
+# this, I think imma call it off like this is not me I want a more Muslim man, I don't like this idea, ok I'm actually gonna sleep\
+# on it and tell him tmw so that I'm not making a rash decision today, Bro what, I'm so confused, What happened, Huhhhhh, What \
+# idea, Can u elaborate pookie, What made u feel this way all of a sudden ?, Idk it feels wrong, Pursuing this mf, Like I'm \
+# reflecting w god rn, And it don't sit right with me, Mmmmmm, To be honest, If it feels wrong then it feels wrong pookie, Yeah I\
+# don't fw this, Itas not supposed to feel that way, What did ur reflections tell u, If u don't mind sharing, See things like \
+# this happen to make u realize what u want, Everything is a lesson, You should definitely think a little bit more, But if it \
+# doesnat feel right then it doesnat, Which isn't anything bad, I don't know, like I want someone that inspires me Islamically \
+# and pushes me to be a better person daily, Abdo is that, But u know how much I value my freedom and hate being tied down by \
+# expectations and stuff like that and Ibrahim is the same as me, In the long run I would be a happy gworl traveling the world w \
+# Ibrahim bc we both agreed thatas what wead do before marriage kids etc, But I'm not completely over abdo rn, so I don't know, I\
+# don't think it's fair to be with Ibrahim if I still think about abdo, YAYYAYAYA, LOLL, I like both hehhe, I am apologizing for\
+# stringing u in this emotional rollercoaster LOL, but wallah after that I feel so relieved and a lotttt better like my heart \
+# is truly at ease, And I'm so happy, Allhamdililah allhamdililah allhamdililah, I'm so happy for you yara I love seeing you \
+# like this makes me so fuzzy hehehe, CALL ME RN, Nvm, Why nvm, Deanna, i14i14, 11.	#cantwaitforthisjourney, Youare so cute \
+# yara, Itas so beautiful that you are able to understand your feelings like this did you know that, Itas okay if happens again\
+# and it's okay if you feel guilty why are you apologizing for anything, i14i14i14i14, Iave never been thrifting yara knows \
+# all the spots, Well, My mom says no it's not okay, But, I think me personally that the damage is already done . Itas been\
+# bought it's not like ur contributing anything cuz they already got the money, But my mom was like no absolutely not, Like\
+# the damage has already been done yk, YAAAA, I was trying to get out of awk situation at planet fitness lol but then I just\
+# left, Deanna was charged like 150 dollars if she wanted to re start her acc so I was like uhhh letas just leave so thatas\
+# why I said call me but instead we just left lol, 111, HUHHHHHHH, 150 dollars???, Like to unfreeze ?, Why, Yeah bc \
+# apparently it was the amount she was charged she never paid before she freezed the acc, But it's bc her old card was \
+# stolen and she stoped it and after she stopped it there was no card for them to charge which is why it accumulated, \
+# Babbyyyy girl :))))), Youare so cute bro, HELLLLOOOO, AWWWWW MY GAWDDD, IN LOVEEEEEE, WHAT DID YOU SAYYYYY, i14, You \
+# guys are so cute, i14, He better take u out on an EXTREMELY nice date the moment ur both back, LOLL no I just wanna \
+# spend quality time idc what we dooo, AWWW HAHAHA, I have been cheesin at my phone for the past two hours, ummmm no but\
+# he has to take u out tf ?, I care, HELOOO, Ur so silly, it's Jonathanas bday tomorrow and he usually always wears a \
+# gold chain but two days ago he read and found out about how gold is haram for men in Islam so he took it off so I \
+# ordered him a silver chain for his bday gift, STOP YOURE SO CUTE, i14, I LOVE HIM, Bro is not lying, Yes and I got it \
+# on Euniceas card, He will don't worry, Slay slay, Craftd London, Is it real silver, DAMN SUGAR MAMA, ^if it is, Yessss \
+# but it wasnat very expensive because I got the thinnest one you know how chains have thicknesses. And the thin ones are\
+# the least tacky imo, I agree 100%, Send pic, i14, Very simple very elegant, Chains can be hot asf bro, YUHHHQHAHH, so excited u have \
+# to lmk how he reacts, Yes yes hehehehe, Reply to keilah in gc bro don't leave her hanging, Ah shit sorry I thought I did, LMAOAOAO,\
+# ur so cute, I miss you, I miss you more, Pookie is missing, Wiggling my lil toes rn, I love him so much rahaf, my heart is so full\
+# allhamdililah, i14like okay marry me, Heheheheheheh, U, i14, A jack?, IBRAHIM IS A HAFIZ, HELLO, LIKE WHAT, AWWWW REALLLYY, Seeeee\
+# I think heas more religious than u think, I love him, So much, Yeah bro it makes me cry, Itas also cuz it's ur first time, i14, \
+# Purring asmr, Idk if u can hear, WOWWWWWW, they look so fresh hehehe, Auntie slayed, PURRING ASMR, i14, Whatas ur skin care \
+# routine put me on, Of course pookie, One min, At night I use these, U already have the hylarounic acid, In the morning I don't use\
+# a cleanser I only wash face with water because at night ur skin produces oils that ur face needs and if u use a cleanser u end up\
+# drying up ur face and stripping it overtime, i14I only use this in the morning it works well with or without makeup very nice\
+# very glowy not too oily, And I put rose water every two weeks ish on my face, SLAYYYY Sarah just got me this for Christmas but\
+# the other version, For oily and combination skin, Ok I'm excited to start again, Ok so rn imma just stay on what I'm doing \
+# which is cerave cleanser, hylarounic acid, and the la Roche Posay moisturizer, I hear conflicting things about this does it \
+# actually do anything, Bc some people say it breaks them out more, Esp bc it's fragranced or what not, Itas not fragranced it's\
+# natural extracted from rose, I literally use the one my mom uses for cooking, Itas sooooo niceeee, Does it do anything frfr bc Iall\
+# start using mamas too then LOL, Rose water is anti inflammatory so it helps calm down my breakouts and any redness, Idk I feel like\
+# after the night I use it my makeup looks sososoosos smooth and glowy, I canat Wednesday I have to go to New Brunswick to see an \
+# apartment for next yearrrr, Slayyyyy, Okay maybe Iall start using it, How was your day pookie I miss you, My day is okay pookie I'm\
+# at work heheh, Hbu pookie, Howas work is he still not letting u waitress, My day was chill I woke up late which I hateee bc Iave \
+# been waking up 11 or 12 everyday and it's so gross I gotta get better, I showered, ate, went to Newark w Sarah and we exchanged \
+# Christmas gifts and got boba, then I came back did laundry and ate, Yeah bro heas not, U deserve a breaaaakkkkk, Let yourself \
+# relaaaaxxx, Yummmyyy Iave been craving boba so much, Did Sarah like her gift hehhe, But I can still relax just if I don't sleep at\
+# 3  like we gotta fix the sleep schedule fr, I'm starting to understand that it's overhyped, It was good just nothing crazy \
+# amazing, Yes tehehehe, But she got me sm more things and I felt bad, I stuck to the budget and got things from her list, She went\
+# above and beyond I felt bad, Mmmmmmm are u sleeping at 3 texting the boo, LMAO, Either that or talking with Sarah, All my \
+# pookies want me aai, Well she has a big girl job she can afford to go above and beyond ur just a baby, Yeah exactly what she \
+# said lol, I'm not complaining, Hehehehe let big sis spoil u, I canat wait to get a big girl job and spoil my sister, \
+# Meeeeooooowwwwww, Meowowowowoowowoow, AWWWW YES, Whheheheheh, I wish to see you soon, Wait do you have any new years plans, Mama\
+# said that she wants to get breakfast w u and me on Tuesday, Would u like to come to a hangout w Circassian youth, OUUUU YAS \
+# FUN, so down after our Pilates, I lowk might not do Pilates bc I'm getting my period soon and I'm paranoid pookie, Is that \
+# tmrw?, I have work tomorrowwwwwww, nawrrr just pad up, yes, Ughhh ok, What time do u finish work, No but I will not enjoy, \
+# Okieee, Like 8:30 or 9 ish, Ugh okayyyyy, Iall see u Tues for breakie then, Are we doing just us and ur mom or like both our \
+# moms and us, Yes hehehhehehe we can go to ak cafe, Ooooooo letas do both our moms, Let me tell mama hehehe, Omg lets ask Deanna\
+# too if sheas free, Arab mama hang out, Yassss omg, Do u think sabreen and her mom would feel left out if we all went bc \
+# theyare like Muslim too yk but jsut not arab, I might also be overthinking but idk id feel left out, But sabreen is always so\
+# busy, I think she would understand, And, Like, Idk, Weave been planning this for a while soooo, Yeah but I think we should \
+# still invite her even if sheas busy, Idk this is just me thinking, What time do u have work tmw, 4:30, Like start, Ok, Do u \
+# wanna hang before then, What timeeeeee, Hm idk what do u wanna do, Hmmmm, Also do u have any long sleeve tops that arenat \
+# sweaters, Like almost body suit material, Mmmmm nooooo, Not here, Ugh me too I literally left everything there, LITERALLY me\
+# w mamas clothes, I canat even go back get my shit bc they locked the building, Since it's the main admin building it's not a\
+# regular dorm, Ugh, I'm so cold Iave been like shivering and shaking in my bed for 20 min wtf, Oh, Idk what to wear to the\
+# circassian hangout tmw, Mmmmmmmm, I was thinkkmg the same outfit that I had in my recent but i feel like everyone alr saw\
+# that post and me in that fit, Do u wanna rob mamas closettmrw, Mama doesnat have anything for tmw thatas for ppl my age,\
+# Mama might, Mama has some cute stuff, Ohhh u mean ur mama LOL, Yes, Lol hehe, awww thatas so sweet but no I feel bad, \
+# Her clothes are mine practically, And my mama would be like 3aeb shu had, How will ur mom know it's my moms, kanu ma \
+# ba3teeke awa3yee y3ni, Thatas true but shead be like that either way even if it's ur clothes, Iall think ab ittt, So u \
+# wanna hang tmw ur house then?, Finnnnneee, Yes we can do thattttt, What time pools, Pooks, Whenever u want bestie, But I\
+# need to shower before u come and work so lmk, Okie, Wanna walk around packnack lake tmw, Like morning walk, Well back \
+# to ur house then u shower and I read my book and finally do the work Iave gots to do, Ummmm it's gonna be 30 degrees \
+# tmrw, Like it's a mindset, Ok maybe ur right, Yeah I always am, I would say we should gym in the morning but neither of\
+# us has a membership, Yeah bro and it's not worth getting one tbh, what time do u wanna hangout then u tell me, Depends\
+# if u wanna go out somewhere or just stay home, Likeeewww hug a mug but their coffee sucks, Thereas nothing to do \
+# around here besides eat, Yeah no, Let me find cute coffe ahop, But if weare going to a coffee shop w keila mama is \
+# gonna be silly maybe, Idk actually, Ok then letas stay home heheheh, Okiee, Yayyyyyyyyyy, Rawrrr when should I come,\
+# Likkeeee 12 ?, I wanna surprise mommy tmw for breakky so idk if I can early in the morning, Okie, Okie 12 is good, \
+# Yayayyayayaya, I wanna wake up at fajr, pray, go get her flowers, and make breakfast for when she wakes up, \
+# Hehehhehe youare so cute, and I will wake her up to fairouz and a kiss, Iave been trying to heal my relationship w \
+# her, Weare doing a lot better, Thatas so nice bestie I'm so happy for you wallah u canat imagine, Mwah \
+# mwahhhhhhhhhh, I wanna be awakened to fairouz and a kiss, I gotchu don't even worry, When I come sleep over nb next, \
+# My break ends the 20th so Iall come after u guys get settled in, YESSS, Yes yes come and omg u can come to class w us, Omg lwkkkkk,\
+# So down, Like our big lectures heheheh, YAYYY, Canat wait, Pleasseee come hehehehhe, I need to be out of this house period and get \
+# back on my grind set bc this break is not doing it rn, So Iall pu to the library or some cafe while u guys r in class too, I don't\
+# fw this break either I must go back to my other home I don't like this home, Awhh babyyy, Its not that I don't like it completely \
+# like I'm enjoying family time and everything but it's too much khallas it's suffocating, I feel like at swat my scope is never \
+# limited but here everyone thinks so narrowly, Thatas how I know I'm never living in nj bro, Not even sure I wanna live in America\
+# atp, I hate having this much free time and being around my mom this much I havenat been around her this long in 3 months I forgot\
+# how much I don't like her sometimes, Yeah bro, Why don't u like her rn whatas up, Never again, U always ask me this, I just don't\
+# okay, Itas, Itas Not the same, Bc it can change like my reasons used to always fluctuate w mama like sometimes I didnat like her\
+# bc she would make me do chores others it's bc she didnat let me go out etc, Yeah thatas valid, I just hate hate hate talking \
+# about my future with her because sheas like ayou know right after u graduate u have no choice weare all going back to saudia \
+# and ur coming with usa, Like what if I have other plans for myself????, aNo u can get a better job in saudiaa, Mmm okay, Did \
+# you tell her u might not pu w them, And u have other visions for urself, Would u want to go back to saudia, We don't have to \
+# talk ab this, I love you, Also I forgot the car rally for Palestine is the same time we said I'm coming over, Yes that works \
+# besties, Yeah youare right, I think if u were to tell her this she would be receptive to it no?, R u not going to it, Iall lyk\
+# idk rn, Deanna has her hair appointment on tues so she probs canat, So just us and our moms?, Iall lyk pookie, I did get into a\
+# argument with mama last night so idk if weare still doing that, Oh Ok cute, What happened r u good, Was it when she came to ur\
+# room and talked, Yes, I'm really convinced that someone around me is like snitching on me at this point, Like actually, Idk \
+# bro like she paying someone to ducking snitch on me or something like that has to be it, Or she has like a camera installed \
+# on my body, What omg why, Its so scary how they know everything like mama just says it's bc they have a mothers heart like \
+# naw I know ur sneaky hiring spies, Bc she said that she knows I still text him sometimes. She won't tell my dad ever thatas \
+# for sure but she just said to stop, What the duck does that even mean, WHATTTTT, Like does she have freaking visions, How \
+# does she even know, I feel like sheas just guessing, And depending on ur reaction sees if her guess is right or not, Okay \
+# like the first time she caught me I wasnat careful so it makes sense. This time tho. There is no freaking way at all because \
+# I have not texted him in front of her the entire time I'm here or called him in this house, I mean I denied everything I was \
+# like I did stop talking to him, No but she either, Or, Has like visions and dreams, Dam wtf, Yeah she has visions lwk, Right,\
+# Bc what, Thatas what I'm saying bro, Bc yesterday she got mad and was like aI'm not delusionala in Arabic, But I don't think\
+# sheas rlly worried rn bc if she was she wouldave talked to me ab it which she didnat since that one time, LMAO, Haram \
+# lmfao, Maybe she knows it won't help atp, Maybe or she found out that I'm just a girls girl, I'm just gonna keep denying \
+# cuz I'm assuming that sheas going based on a feeling, yeah bc thereas no concrete proof ur in touch w him still, Maybe she \
+# has the phone plan that can see ur texts, Bc my aunt has that secretly w sammy, But I don't text him, Yeah but in my texts \
+# w u, On messages, It doesnat matter, They can see whatever u do on ur phone bc it's on the plan, No but insta ans snap and \
+# social media websites are third party apps that don't record stuff like that, I know my phone plan, I liked it up, Looked, \
+# And read everything abt it they canat do that, Oh okok, Good work soldier, Yes bro, Gtg eat brekky will be back, Okieeeee, \
+# Wyd tmrw, Hang out w me, Please, Please, I need to be far away, From home, I love you pls pls, i14, Eunice after telling \
+# the customer aokie dokiea, Okie dokie, Lemme just make sure w mama when im back home ofc, Why did ur mom call me lol is \
+# everything ok, Did anything happen, Donat answer it's okey, Or u can and tell her that I actually did stop talking to him, \
+# Unless u don't want to thatas okay, Nothing happened Iave been at work, Like would u be able to say that I completely ended\
+# things when I went to swarthmore but if u don't want to thatas really okay, Like I know it's a lot, I'm so sorry, Can u \
+# please update me I'm not home, Yaraaaa, Hello, Donat leave me hanging please, Hiiiii, Okay bye I just talked to her, I'm \
+# so sorry, That she brings u into this, I'm so so sorry, Like actually, I'm sorry I just saw these, I'm at someoneas house \
+# for nye and weave been doing card games I didnat have my phone, I didnat see u said to not tell her I'm sorry plus she \
+# didnat even ask tho she just said it as a declaration that she knew it's still going on yk, Did she say weare doing the \
+# breakfast on tues just us three ? Or my mom too?, Can u lmk asap, Also my brother in law just surprised me with broadway \
+# rockettes tickets for tmw so I canat hangout I'm sorry, Yes yea pls, Lets do something, Where do we feel like going, Hehe,\
+# How early, Thatas breakfast that ainat brunch, Can we do like 1 ish 12 ish, Can we confirm, Helooooooo, When and where, \
+# And who, Sheas not suffocating to me don't worry, Itll be okay baby, Oh okay, Im here to support you on that journey, If \
+# thatas what you think the takeaway is but don't rush anything, Especially when it comes to your relationship w Allah swt,\
+# Thatas all I mean nothing deep lols, Sorry to be ominous, Idk, But I'm here for you no matter what, No tell me what u \
+# mean pookie, U never say things bc u don't know, I mean like don't take this as the one sign and then become a sheikha \
+# bc thatas what u thinkkkk god wants u to get from this, If u become a sheikha let it be a process and enjoy every step \
+# along the way, Bro, I'm not gonna do that hello, I'm very far from becoming a sheika I think u misunderstood me. All I'm\
+# saying is basically that I need to be a Muslim again and do the bare minimum which I'm not even doing, WHHYYYY, NOOOO, \
+# PLSSSSS GUYS I MISS YOU, No bro I wanna POKE, But I wanna come :(, And I have no membership, U mean gym, Like today, \
+# Guys pls I really need to not be in my home, Ok u guys are mean, Okay if that's whatas calling to your heart I'm so so \
+# so here for it, I'm very proud of u no matter what, I'm also sorry I couldnat hangout today I know u needed to get out \
+# fr but I really couldnat control this, Itas fine, Weall see, Yes, Can we pls, Itas okay, How u saying u can hangout tmw\
+# when we have something planned, Fake, Traitor, L, Everyone canceled too :(, Common rahaf L, I'm sawry my brain is all \
+# jumbled wallah, I will say I canat, No it's fine!!, I'm kidding lols, U can say we have something planned w Keils I \
+# don't think theyall care, Okie, But, We need to ask keilah, For tmw, It works for memeeeee, Yes, Yes I was just gonna \
+# say I forgot but we have plans with keila tmr, Shush I forgot, Anyways if someone wants to do some charity work and \
+# see me today I would rlly appreciate, Me too I think, Depends if I get my period today, What time, Yes, Can we get \
+# poke instead, Actually it's fine Whatever works, Itas okayyyy, Just pls get me out of here, So playa at 3?, Nvm I \
+# might have work tmw, Actually nvm letas still do the eighth cuz I found out I have work tmrw, Nawrrrrrr, I thought u \
+# were off tmw?, Did u ask him for hours, Why did u think that I don't get my hours until Monday, Oh true, I think I had\
+# in mind u working weekends for some reason, I'm shlumped on the floor rn after too many chais my brain too tired I'm\
+# sorry, Itas okay pookie don't apologize, I love you, i14, Nawrrrr nothing is sending, I love you more, Ur so pookie so \
+# beautiful, Girl be sooooo for real what ab that pic is giving beautiful, Shut up, Oh, i14look what came up in\
+# my highlights, Me when husband, AWWWWW THE HEART IS SO CUTE, I'm gonna cry, I'm gonna cry too, from happiness, Allhamdililah, 2, My\
+# yaryoraaaaaa inshallah you will have many more happy days, thank you baby, Mwah mwah, I miss ur face, I miss your beautiful face more\
+# pookie, Did u get ur period today mama?, Can u go to Pilates tmw, So I can hug my bbg, Mmmmmmm okay maybeeeee, YAYYYY, Would u give \
+# me a ride 11, Ofcourse my love, You don't even need to ask, Hehehehehhehehe, What are u wearing, We agreed to adopt btw, Oh um idk \
+# later me problem, Like adopt children, Thatas so slay, The dichotomy of this convo is sk funny, Yas I was so scared the father of my\
+# children would only want biological kids, We agreed to get my tubes tied after 2 kids 14, Slayyyyyyy, I thought u wanted to adopt \
+# too, Mmmmmmm future problem, Idk yet, Weare adopting Syrian and Palestinian orphans only tho, We don't want no American baby, \
+# Aweeeeee 1, And if it's any other nationality or ethnicity then we canat expose them to their culture as someone from the same \
+# background can, Yeah like no matter how hard u try it won't be the same yk, Mhm and my heart wants a Syrian or Palestinian child, \
+# And how when we become rich we should start a huge project for refugee children, Like okay marry me ????, I'm lwk half asleep idk \
+# if any of this makes sense, Yes pookie it makes sense, All your dreams will come true and you will start your huge project if \
+# thereas someone who can do it then it's you, U so cutie patotie, HES LITERALLY ME IN MALE FORM RAHAF, youad love him, I want us to \
+# go out and u can rlly get to know him, I love you, YYAAASSSS LETSSSSS, Okay also I'm sorry I keep talking about him but ur like the\
+# only one that knows so bear w me pookie, I Love you more heheheh, Yara whatttt hello why are u apologizing, When you visit me next\
+# semester trust, I WANT u to talk to me about him, I feel baddd, I love watching my bestie fall in love, Tf u mean u feel bad, \
+# Okay good bc I can talk about him allllllll day, Shut up bro, Feel bad 2alllll, Bc I'm basically saying the same thing over and \
+# over again and just saying how much I love him, like pick a new line we get itttt, Sorry I'm my biggest critic, ILL STOP \
+# APOLOGIZKNF UR RIGHT, I know ur gonna say don't apologize so I'm sorry for apologizing, YOURE IN LOVWEEEE SO WHATTTTT, OOOBBSSSS,\
+# BAHAHAHAHA, thank you for being on this journey with me rahoofie, I'm going to be on all your journeys inshallah, Does Sara know\
+# btw, Yes teheh, Just that were tg but I don't share these details w her like I do w u lols, Or ragad, But she knows too, U guys\
+# and Zaakir his bestie are the only ones that know, Awwwww, Pookie I feel weird I don't wanna Pilates, We can still go out to \
+# breakfast w mama, But I feel crampy lik im gonna get my period, Also what time would we go after your Pilates?, I'm not going \
+# anymore lols, I'm tired, Okieeee, Let me tell mom, ^^^, Our moms, Bring mama, Mama said do u wanna meet somewhere or we can \
+# pick u guys up heheh, Mommy said we can meet there but what time, Depends where weare going, Do we want AK, Or, Yasss, Like \
+# Jackie smalls, I want that rn, No I'm more down for AK, Okie, Mama said letas leave in 30 min, Okie Iall get up rn, Weare \
+# leaving in abit pooks, We just left, Hiii, Weare 2 min away, Do u guys wanna come over, I'm bored, If ur free pu, Sabreen and \
+# Eunice I know u said ur free ooooo, Doesnat hannushka have work, Wow woo wow, I'm also down for whatever Pookies, Lmk so I can\
+# clean my room a bit Doe, Mama said u don't have to bring food if u come sheas gonna make Chinese noodles and white rice, I'm \
+# also down to do that, Hannushka ur call pookie, What time, I can get dropped off to urs, Okayyyyyy, Whatever u want pookie \
+# thatas also fine, Do we NEED mall, I dont need mall too, Okay then get boba and come here is the final plan?, Hi, I forgot \
+# what percent sugar I usually get my gongcha, Is 25 an option, I forgot, No lmao i usually do 30 or 50 depending how I'm \
+# feeling, Okie heheheheh, Thank you beautiful, Ofc my love enjoy, strawberry milk tea with crA me burle topping and pearls \
+# also 30 persect sugar por favor, i14Find the toe, i14Me when, Euncie and I arenat working Sunday we can probably do that, \
+# Saturday we have work, I don't think so cuz the landlord didnat reply, It's still there, It hurts, Ooooooo let me give u a \
+# haul, i14,Tehehheeheheh, I got worth pookie it was the best one on my skintone, Yesss I love it it's so nice, Yeah thatas not\
+# normal wtf, Send pic how it looks like now, Have u tried icing??, It went down a bit but it hurts more, Hi pookie, I just \
+# got home, I miss u guys, Felt, WOOOOOWWWW, SORRRYYY, IM CARCHING UP OM TEXTS R., RN, OUUUU WHO, the Palestinian senior?, \
+# yesss fae, Such a beautiful name u know thatas what they call certain fairies?, Mashallah for reals, Yessss I know hehehehhe, Whatad\
+# you guys do, We went to the cardinal cafe in pomton and got brunch, i14And today I woke up with my eye like this, AWW SLAYY, Was it\
+# good Iave never been there, Like wtf, Hello are u good, It was so good it gives Vickyas, Oh maybe bc cat allergies, OUUU, I wish to\
+# go there, No it's def not that my allergies arenat like this at all, So what is it then omg, Has it gone down since, I don't know \
+# but mama said if it doesnat go away tomorrow then I have to go to urgent care, My baby, I was about to go check out because all \
+# the summer friday balms were out of stock and then the employee comes to the stand with a huge cart to restock and EVERYONE ran \
+# there it was so crazy, U UUU  U3 UUU, U3  UU3  U3U UUU, How are u doing pookie, Howas ibrahim, Whatas ur nickname for him, UU aai\
+# aai aai, So good tehehehe, So happy allhamdililah, my brahoomi is so very good and amazing, and amazing x 100000, he just bought \
+# us tickets to his fav Egyptian singer coming to nyc in March lols, I felt bad he probably dropped a buck  so I got the bus \
+# tickets LMAO, Allhamdililah habibi heheh, AWWWW STOPPPPPP, SOO CUTWWWW, Whoas the singer, I'm cooking something rn on the down \
+# low Iall update you later in two weeks, Hakami, Can u tell me now, Likeeee tf, I wanna be involved in the cooking, No it's on the\
+# down low from everybody but no one knows I'm cooking it, I'm telling u I'm cooking it so u can remind me in a month to tell u if\
+# it worked, Itas about my future just pray for me, But why canat u tell me while it's cooking, Just trust babygirl, Mmmmm, Kay, \
+# I pray for u, I would like to know Doe, Just sayinnnnnnnn, Just trust, Howas lover boy, Or do u not text him bc ur home, I text\
+# him but only at night, Heas good heas planning a trip to Makkah with his friend, Heheheh, Mmm okok, HELLOOOOO, WHATTTTTTTTTT,\
+# LIKE WHATTTTTTTTTTT, HUHHHHH1, I'm so proud of him yara, SLAYYYY, Why am I gonna cry rn, wtf I'm so happy for \
+# you1111111111111111111111, Itas okay I cried today too, I'm so so proud of him, MY HEART JUST LIT UP 1, Babyyyyy, What \
+# inspired him, How is he going omg, Whoas the friend, TELL ME EVERHTBING, Heas just learing alot everyday heas watching \
+# lectures and hanging out with new Muslim friends he made from the gym and they help him a lot they even told him they can \
+# come to the masjid with him when he converts, Heas this iraqi from the gym theyare besties now, Like they met a few months \
+# ago, oh em geeeee, 1222, Yes I agree, My heart is so full, I'm so so happy for him, I'm glad heas finding himself on this \
+# journey with so much support and love from those around him, He deserves all those feelings of acceptance and I'm SO SO happy \
+# for him from the bottom of my heart truly, Tell him I say hi hajji next time u talk, He just told me, aI feel like I'm gonna become \
+# too religious and I'm scared youare going to wish I never converted. Will you be okay with me changing so much ?a, AWWWWHHHHHHHH, \
+# STOP IT RIGHT NOW, RIGHT NEOOOOOWWW, why is urs literally more religious than mine im crying, YOURS IS A HAFIZZ BRO, LOLLLL, \
+# Heheheheh, Sheas the sweetest I met her last year in Florida, Butttt I'm hopeful becauseee we do have a history of marrying converts \
+# in my moms family, Oh because I think it randomly unshares when I delete texts and I delete anything that can potentially get me in \
+# trouble the moment we text about it, I fix it, OKAYYYYY MONOCHROMEEEE, YOUVE WORN THE SAME THING THE OTHER DAYYY, AWWWWWWW, Idk u \
+# were wearing a creame monochrome fit the other day, Nvm it's not funny then, U guys are so cute, I have a question, Jonathan went to\
+# the masjid with his friend today, i14, HAVE U EVER HEARD OD THIS, aZIP UR JACKETa, Like Iave never heard of this, Idk I thought we \
+# did, Yara ur missing the point bro, UR MISSING THE POINY, GOD, Okay thatas common knowledge but the aeither unzip or or zip ita is\
+# odd, WHAT IS THE SHIA FREIND TEACHING HIM, Yeah I told him, And his friend said alistening to music after sunset is bad lucka, The\
+# sunset thing?, I already told him babe I know dw, Mine are shia phobic too, I'm not they chill, Oh no pls yara don't worry babe I\
+# was taught everything in Saudi Arabia we don't have to talk about it, Ur so cutie, Of course my baby girl, But also, Saudi is \
+# very Shia phobic sometimes, So idk what my Islamic teacher, Was teaching us, Okay bbg, Go to sleeb, Ummmm, Idk, Idk if I can I \
+# have to wake up and go to the bank early with baba, Idk Iall ask him, Mama said no she said ainat no one driving allat again, We\
+# have kids with us no one is doing that, Work got canceled who wanna hangout with me I'm sad and already dressed, Yesssssssa1i,\
+# Guys we hung out once all together, I feel like itall be short yara, I think we can still do something Monday, Ummmmmm ok, \
+# Weare thrift hopping queen thatas gonna take all day, Fine, Can we just go to cafe with her so we have to thrift, I'm broke\
+# I'm going thrifting bc I'm broke, i14, Like, If he overbooked why did he tell ME to not come, LMAOAOAOA, I would rather \
+# hangout w the girls too, How about we thrift w them?, I'm too broke to thrift u don't understand, Yes, Ok, We can tell keila \
+# we have things the rest of the day, So u wanna thrift w them and not her, And just go cafe, Can u say this in the chat, I mean\
+# we can do anything idc, U ALWAYS MISS THE POINT OF WHAT IM TRYING TO SAY, I like to annoy u sawriiii, Okay tbh I don't wanna \
+# spend the entire day with keilah I didnat even know that was the plan AHEM AHEM. I would rather see u guys, So we can \
+# probably make Monday work, If u guys wanna come over today and have cozy movie night here a1i I know it's snowing but maybe u\
+# can get dropped offffffff by parents possibly probably perhaps maybe a1i a1i a1i, AWWWWWWEEE YAYY CONGRATSASSAS, Mmmm no, \
+# Can we doing something else pleas, I'm on my period and it super heavy I don't feel like doing all that, Weare all girls, I \
+# need sunrise fries, So bad, LMQOAOAOOAO, i14i14i14i14i14i14, Pookkkkieeewessss, POOOOKIESSSSS, WHAT WE DOING TOMORROW, i14, \
+# BAHAHQHHAHA, LMAOAOAO, Discussing why someone said Doritos are not halal, Yes, Is 1 okay?, I'm sorry Iave been at this event\
+# I shall catch up and call u when I'm back pookie, What, Are we, Doing, Tmrw, Guys, Also I don't know if I can go thrifting \
+# Pookies I have family coming from Philly later tmrw so I have to be home after cafe, Wanna get birria tacos tmrw, For \
+# dinny, Does anyone like aquaman, The new one just came out, AQUAMAAAAAANNNNN, BUT AQUAMAN HELLOOOO, JASON MAMOAAAAAA, \
+# Sephora is free shipping pookie just order, Were we always so indecisive when making plans I don't remember us being like \
+# dis, Okie, Comimggggg, Weare hereeee, I'm telling yara that this isn't ur house, Idk where we are, Se here now fr, Insane, \
+# Literally, Still not over it tbh, I was just telling my mom bro, Mama was flabbergasted, I havenat told mine yet bc if I do\
+# sheall just not let me hangout w her as much in the future, Like thatas so wtf????, No it's NOT REAL, LIKE TWO DOLLARS, NO \
+# NO NOT EVEN TWO DOLLARS, THE FUCKING 30 CENTS, THE THIRTY CENTSSSSSSSSSSS, LIKE HELLO, Not to be that person but I spent 35 \
+# dollars for snacks for secret Santa plus the gingerbread house lol and I never asked anyone for anything, I KNOW, I WAS SO \
+# CONFUSED, How is everyone fine with that like are we weird ???, I know like did I ever ask her for anything from the hundred\
+# times I go to her house and her and her mother coffee and donuts, LIKE NO BC WHAT IS RHAY BEHAVIOR, Also if u want us to \
+# split the secret Santa and gingerbread house thatas actually valid wallah, No I don't, But hers isn't bc it's a normal \
+# hangout, I don't care, No like why was it so normalized, Who the hell normalized this, SINCE WHEN WERE WE LIKE THIS, LIKE \
+# HUH, Idk if thatas how her American friends function but I don't fw that dafuqqqqq, Like WALLAH YARA it has never crossed \
+# my mind to split the cost of the ginger bread house until today when she asked for the 2 FUXKING DOLLARS, Me neither, NO \
+# LITERALLY, I'm genuinely speechless, TWO DOLLARSSSSAA AND THIRTYYYYYY CENTS, THIRTY CENTS, LIKE BE SO REAL U MAKE MORE \
+# MONEY THAN ALL OF US COMBINED AT VIAGGIOS TOO, Khallas whatever I hope she enjoys those two dollars and thirty cents!, I'm \
+# still in shock bro, Yeah sheas so right with that too tbh, Like if it wasnat for the group being the group I don't think \
+# half of us would even stay friends  which is sad to say but it's okay to grow honestly, And it so funny too bc when we came\
+# the snacks were almost done and empty like there was barely anything in the chips, Itas gonna happen at some point, No\
+# literally, Yeah lowkey, We could just stay like lifetime acquaintances, I think thatas how itall end up, Not besties for the \
+# resties, Oh well whatever, Khallas inshallah tit-hana with her 4.60 from us, Mama said asho el 3afan had are u friends or is this\
+# a business a, NO SHES SO REAL FOR THAY, like down to the cent, AWWWW MY GADDDS, so cute wtf, I wanna talk to u about us last \
+# night bc it changed our relationship forever for the better, Can u come w me and runic, Eunice, Yes, I can, I'm going to the bank\
+# rn, Im leaving rn, She has to be at work at 4:30, Well I think I can get dropped off to cafe, Where u going, Okie at fine grind,\
+# I don't think I can pookie, Ugh okay, Unless u wait a bit bc the bank shouldnat take that long, Actually, I'm about to pick her\
+# up, Ur dad canat drop u off there, ?, Abadan, Itas too far girl, Do u know any closer place, Hug a mug idk, Okay lwk, Lmk, \
+# Donat debrief without meeeeee, Ok, Ur getting dropped off there right, Where did u decide, Hug a mug ?, If ur going to fine \
+# grind I cont come, Yes hug a mug, Okie, I'm done with bank I'm going home now, Okie weare also on the way, Wait, I though u \
+# can get dropped off at hugva mug ai, I can, I'm going home real quick tho, I need to change real quick ans baba will take me, \
+# Okieeee, Nvm, I canat come, I'm sorry for making u go to hug a mug, Mama said I'm going out too much, Lol it's okay, Too much \
+# fun yk I have to stay home and be depressed a bit, Been there done that classic, Haram she does these things with good \
+# intentions she probably does feel like the villain even tho thatas not her intention, Haram rahaf sheas literally just a girl \
+# too, Okay, Maybe, I'm sorry baby, How are u doing, I'm okay I bickered with her a bit lol, She was like go ask baba to take u \
+# and I told her ayou know baba won't say no to mea  Then she went on a whole rant about how sheas the bad person and the \
+# abo3bo3???a That says no and the parent that we all hate this this and that, WOOOO, WHAT DID HE SAYYY, MASHALLAHHHHH, Me \
+# personally I like to leave a big space in my bed and pretend that heas there every night, But idk thatas just me, Oh yes and \
+# steal his clothes, No youare not I do that also, And also we watch movies together every night on netflix party, We urge \
+# everyone to try their best to go to this protest on Saturday in Washington DC. PACC is sending buses, if you would like to \
+# reserve your seat, click on the following link:, If u guys do it yes, Mama said to do it asap because they will fill up like \
+# tonight, Yes I need to know so I can call out of work too, Helllllloooooooooooooooooiiiiiiiiiiiiooooooooooooooooooiooo, \
+# HELLLLLLLLLLLOOOOOOOOOOOOOOOOOOOOOOO, Can u let us know asapppp, The buses fill up in seconds, i14i14Which one is better for a\
+# dump, Slayyy thank uuuu, Actually nvm not posting, But ty, I think it's stupid, To post rn, At least me personally i feel \
+# weird idk, I miss u more but I'm working 10-8 tmw, :(((, But weare seeing each other Friday right, Ohhhhh it's okieee, BITE \
+# FOODDD, Hi, Becauuuussee idk if it sounds stupid but I feel like I'm being monitored on my phone bro I'm ngl so I told myself\
+# I would say things that would get me in trouble in person only lol, Idk, I love you euncie, But I think it will help, Wait \
+# first letas establish whoas driving, Guysssss come back letas discuss, LMAOAOAO, We know ur home, I'm not going to jummah I \
+# don't mind, Eunice and I have work at 4:30, Ft?, Texting is too much work, Hellllloooo, Fakeeeeeee, Well, Itas fine I canat \
+# go tf would I tell my mom, U guys go it ok, LMAOOOO, Yeah can we pls, Can we ft, U guys better join, Hellllllooo, FAKE, \
+# Fine, Okay, Like this message for Jackie smalls, They canat bc who would take them so I'm assuming the answer is no, Yara\
+# deanna, Istg, HELLLOIII????, can we keep texting until they Answe, Bro, Bro, Bro, HALLLLOOOOOO, ???, I'm calling yara, I am,\
+# Okay, Based on the assumption that they are not going to jummah, What time, And we would go to bite food ?, I love sabreen \
+# and I being on the same page wow, The brunch place, Fair lawn is closer, Itas 19 min, Okay one more question, We canat all \
+# fit in Hannaas car, So whatas the solution, yayyyyyy me toooo hehehehheh, How are u gonna get there babe ur not driving and\
+# neither is Deanna, Huh ?, That would be correct, Also correct, Coming, SEND OUR PICS TG, Hellooooo, i14i14i14i14i14i14, \
+# i14i14i14i14i14i14, i14i14i14i14i14i14, This live 1, i14i14i14i14i14i14, My heart, ai ai ai, i14i14i14i14i14i14, Weare so \
+# cute Hehehheheh, I KNOW YOU HAVE MORE PUTA, SEND THEM RN, bro sent the best one of herself, Ok just send them bro, \
+# Hiiii!!!! just broke up with the love of my life how are you guys doing ?, Yes, How do I not off myself ??, Genuinely, I \
+# don't know if this is a break or a break up, I don't know, Bro it's so funny after that she hugs me and says how upset she\
+# gets that I don't hug her anymore and how I should hug her every morning even if I hate her ????? Like bro bffr, Can I \
+# come over, I want to hug you, Want to run errands with me today?, So you can get out of the house, Or want me to come \
+# over, Hey babe, Alhamdullilah I have work today, Itas okay don't worry wallah I'm keeping myself busy i am packing for \
+# New Brunswick and going to work, I love you, Okay 222, I canat wait to see you in NB, I love you so much, I know you \
+# canat talk about it on the phone so thatas why I wanted to see u in person, Me too my baby girl, Itas okay ily. youall \
+# know in New Brunswick I'm not really sure what the concise we came to is I think weare gonna need a few days to make up \
+# our minds, Okay my love take it easy and know you can call me to say anything and everything, I love you  thank you for \
+# being here for me my love, I love you guys, How is work baby, If you want something to cheer you up:, Itas okie it's \
+# chilllll, Tell me tell me, i14, LMAOAOOA, Im peeing bc i can imagine how hed say it in person, I giggled, I will JUMP, \
+# HAHAHHWA, I LITERALLY CANTTT, i14, Heas literally just a boy, thatas so cute, Heas so silly I love it, Me too tehehehe, \
+# Heas so funny, Did it cheer you up, Yes it did hehehehhe, Leila is here crying I cont do it anymore And mama isn't \
+# letting me come sleepover by u, I canat handle this, Why is she crying hello, Sheas like two months old, That would be so\
+# nice :(((((, But khallas I canat, Tell mama Rahaf is very sad because she failed calc, And she needs you2, I told her \
+# sheas depressed and I need to go to her she said go during the day, Ugh, Itas okay pookie u will come sleepover in New \
+# Brunswick heheh, I havenat asked her yet I'm scared of her, Thereas a protest in nyc on Monday I wanna go to, So ur not \
+# sure if youare comingggg2, No Iall come but the things is the protest is Monday and Tues I have doctors apps, Okie then \
+# come wed, I will come but when idk, Okie okie let us knowwww, Sheas taking care of leila rn but when things calm down \
+# Iall talk to her, Give Leila kisses from me, Sheas a feisty one, Hehehhe, That she is, Baba is so cute taking care of \
+# her w mama, Their first grandchild o, So cute, Look at this cat I met yesterday, AW SROP, MASHALLAH, This is her \
+# growling and making an angry bird face cuz we were cutting her nails, WHERE WHEN HO, HOW, Itas my momas friend cat, \
+# Sheas a baby kitten, Heheh, Hayati11, My heart canat take all the cuteness, You and her, Me too bro I literally cried \
+# when I saw her the cuteness aggression go crazy, i14, This makes my heart so warmmmm awww, What time r u going to nb, \
+# Tmr at 3, i14What came up on my memories 1, I need like 25 min, Ok?, We can wait tf, I also have so many bags and my \
+# laundry basket, Guys I'm scared my things are not gonna fit, How much can fit, Is it very packed, I can leave some \
+# things here ig, i14, Errrmmmm, Bro, So I canat fit anything basically, My dad said he can take me, Maybe we should \
+# split, Itas okay I have a lot girl nothing is gonna fit, No no, My dad has nothing to do, Wallah, Listen., Donat, Itas \
+# gonna be a lot, Girl, Okay, Okay one min, i14, i14, Anyone but youuuu, Lets watch that, Or or or, Do they have aquaman, \
+# :(, I love him guys, I love him, Jason mamoa, I love him, Genos Philly cheesesteak, I wanna watch anyone but youuuuuuu, \
+# i14, i14, I MADE A NEW FRIEND SHES SO CUETTETEE, Can you send me the link to the comfy you got for me on secret Santa, \
+# Itas amazing and I wanna get Ibrahim a matchy one, IM SORRY, I was looking for it and then I got distracted, I got it on\
+# Amazon, But I canat find the exact one, Itas okoeeee, Ik it's from Amazon but the one I got sarah is bad, Mmmmm okie I \
+# will try to find the exact one, Unfortunately, They wanted to go eat with my cousin and see him, I said I didnat wanna \
+# come, But they forced me, Iall be back in a few hours, How are you in Philly and u didnat tell me ur FLEEE, FAMEEE, \
+# FAKEEE, Enjoy cleavers, Whateverrrrrrrrrrrrrrrrrrrrrrrrr, I love you more, Okay Ms worldwide, I sent u money sabreeni\
+# can u check, STOP ITTTTT, AAWWWWWWWWWWW, I CRY, PLEWAASEEE, i14Yara catie is using ur swarthmore shirt as a hair rag, \
+# GIRLL U TOOK IT TO A PARTY, Awwww youare so cute, Here u go pookie, Awwww, Hellllooo, If u get home pls beware of \
+# creatures under bed, They didnat leave yet, Tmrw, White washing, Silly girl, i14i14, Catieeeew, Come to efes, Iall ft u\
+# tmw bc im about to sleep but Iave been doing so good allhamdililah, I want to hear about you and the cats and family \
+# tmw, i14WE have to sign it, WERRE JUST GIRLSSAS, Removed a heart from aWERRE JUST GIRLSSASa, Guys where does my \
+# location say I am, YAYYYY, YAYYYY WE CAN GO OUTTTT, The G dr is so girly pop, So very much, SQUARE FACE MAN ALERT, ON \
+# LX, WHERE WAS MY FACETIME BITVH, Ur in Wayne, Why u in Wayne, GIRL, Cef, Sorry im crazy stressed rn, He canat see u \
+# don't worry, Ur alone toght, Right, No, Whoas here, Mama, I'm watching a show, Do u think she hear me, ARE U SURE SHE \
+# DIDNT HEAR ME, HELLLO, Yes yes, Okay, He says hi, He just wanted to say hi to u2, HOW IS IT OMG U DIDNT TWLL MEEE, me \
+# too, How you feeling pookie, I'm very happy very very very happy, actually don't talk over text in case you know what,\
+# Yes yes yes, We shall call and debrief at an appropriate time then, My heart is so full hearing you say that1111, I \
+# love you so much, I love you so much more, I miss you, LIKE SO MUCHHHH, Send the videoosaaa sabreen, ME TOOOOO, so \
+# much more, He was liek do you know how many people want this house ??? But I chose u cuz ur name is Arabic, \
+# i14i14Happy cat happy life, i14Tehehehehehe, i14Tehehehheh, I miss u I'm sorry I havenat called Iave been pulling all\
+# nighters doing work, 6 classes and a job is not it this semester pls forgive me my love, Itas okay pookie I love \
+# you, i14YAYYYY I GOT THE FELLOWSHIP, Can u call me today doe :(, I miss u like I'm begging just 5 min of ur day \
+# please, Yes please, But weare getting sarah from Philly in a bit tho so are u free for night call, THANK YOU POOKIES\
+# ILY, Yes yes, Why didnat u pick up this morning, I WAS SLEEPINGGGGGG, CALL ME NOE, if u can, I'm cooking w brahoomi\
+# and sarah now I canat, Okayyyyyyyy, Have funnnn, Teheheheheheh, Tell Sarah and Ibrahim I say hi, I shall, Okie, I \
+# love you, I love you more, I miss you, I miss you so much more, My parents are still in Saudi, i14, Omggggg, How \
+# do u feel, LMAOOOOO THE LIVE, very nice bc I have my babies with me, YAYYYY, How are the kitties, i14i14, Hehehehe\
+# so cute, Sunday dummmppp, Go go go, Removed a question mark from an attachment, That would be moi, Yes but we \
+# cannot discuss ingc, Girl, Oh my god, I had a dream last night abt u, And u weare looking for ur vape everywhere,\
+# Go look in ur seat girl, These videos confirmed that u guys dgaf abt us and forgot abt us, Because no one said \
+# anything, Cunt cash dying, DEAD, i14i14, i14i14i14, i14, i14i14i14i14i14, Yes, Now we just look stupid, Hey, I'm\
+# sorry I was leaving for class when u called, Are u free to talk later ?, Yes but like lateeeer, When is \
+# lateeeerrr, U always say that, How about 11?, Art thou free then, Okay yes, Yassss, Can we actually do 12?, \
+# Mmmmm it's okay we will talk later, I have an 8 am tmrw I got to sleep early, Mmm okie baby good luck w ur \
+# class, I love you, I love you more, i14When he helps with my friends hw, This is where I'm at en, Rn, AWwwwwww,\
+# Thatas so cute stop, I'm sorry confused so what does he want, PERIOOODDDD, AWWWWWW THATS SO CUTE HELLO, Whatas\
+# his name, I will find, First and last, Laughed at aBut you wouldnat even know aa, BISMILLAHHHHHH, Eunice and \
+# I silently cackling in the library it's so quiet, I CANT, Euncie also ribbited, KHALAASSS, Art, Skill issue, \
+# i14Cat rizz, Hooman cat, Would your family like to buy two tickets to bassem Youssef show in Newark bc me and\
+# Ibrahim canat go anymore, For cheap, for this Friday, Send details, Or do they know anyone that would, Lemme ask mama, \
+# How much, Tell me, 55 each I think?, But weall discount it more for u, Can u send all deets, Yes one sec, He has the actual \
+# tickets but this is info, i14, And it's two tickets right ?, Yes, #valentinesidea for them, i14, Please say yes, He said u don't\
+# even have to pay him he just feels bad if theyare watsed, Girl wahhtttttt, If my parents say yes ofc they will pay u, Tf, Its okay\
+# just say yes, I feel bad bc he feels bad, Itas okay pookie I will let u know, Okieee, What did they say, Plssss girl answer, I'm \
+# sorry girl I was studying for my midterms wallah, I called mama j now, She said, She will let you know by today, Awww pookie take it\
+# easy, when is ur midterm, Tomorrow at 7:45, Me so scared, Happy galentines day my love <333, Me poop my pants, OMGGG NAWRR, Go lock\
+# in, Happy galentines pookie hehhehehe, Throw ur phone away lock urself in ur room and study, I love youuuuuu, I love you more ai,\
+# Yes yes I shall do that, And I will lyk what mama says, i14, Her and baba are indecisive but sheas asking her friends, okieeeee,\
+# YAY, AWWWW SO VALENTINESSSSSSSS, UR SO CUTE, I wanna hug u, i14, I just got Pookies flowers, Heheheh, SROP, STOP, Meooowwwwww,\
+# THOSE ARE SO PRECIOUS, WHY IS HE SK GOOD, AWWW, Send pic, No silly i bought them for the girlies hehehhe, Ohhhhh, AWWWWWWW, \
+# THATS EVEN CUTER, HHEHEHHEHEHEH, I'm so sad I'm not w u guys, idk if 10 dollars a flower is unreasonable, Theyare singles, Girl\
+# pls, Pookie 111, I don't rlly know how money works, Me neither I'm just a girl idk if the guy was ripping me off, I think \
+# thatas good? For them being that cute I think it's worth it, LOL, Ur asking the wrong girl, I got Ibrahimas present shipped to\
+# my house instead of here, So today I was like Iall give him a letter and chocolate and nuts bc this man is obsessed with \
+# nuts, So I spent thirty bucks on two bags of nuts but that I think is a rip off, but either way I can just not give him \
+# something td yk, Omg, this is what I got, What kind of nuts are 30 dollars, i14, heas been wanting a black ring for a while,\
+# so I got him a gold ring plated black and it comes with a life time warranty, And then I got myself the queens ring to \
+# match, i14, YES I LOVE NOMINALLLLLL, THATS SO CUTE I LOVE IT, But I wanna see the nuts, LMAO, I will but I canat pull them \
+# out heas right next to me, Iall send pick later, GO STUDY, OKAY, Yes yes I go study hehehe, FaceTime me this weekend if u \
+# can <3, Yes mommy aai aai, i14In lab rn but this is it, Wait pookie I just thought about this since it is gold can he wear \
+# it, They look yummy but not 30 dollars yummy, Oh nvm sabreen and I looked at the website it's stainless steal not gold, my \
+# bad I mean gold for me tehe and his is platted black idk whatas under it, aai, Hiiiiiii, Is there an age limit do u think, \
+# Like if my mom and my sister would go, YASSSSSS, Sorry just saw this btw, Lemme check seats, Hi pookie, How much should mama\
+# Zelle u, Gworl idk, Why I'm just a girl, He didn't tell me exactly how much but last I checked for me they were 55 each, I \
+# think 100 for both tickets is good, I think if I email u the tickets it should work, How should I send them, Can u \
+# answerrrrr, Sorry I'm on a meeting but yes email them to me, Rahafsatary@gmail.com, Wait can u do Venmo not Zelle bc it's\
+# easier to just transfer it to him on Venmo, I have an exam I'm leaving rn but we can Venmo yeah, Sorry, OMG SORRY I FIRGOT\
+# MIDTERM, how did it goooooo, ik it's not the same one ur taking, but still, I'm gonna take it now, Soon, Omg good luck ya\
+# alby, Thank you pookie, Can u email me the tickets, Mama said her Venmo don't work can she Zelle, Yes she can Zelle np \
+# mamas, Iall have him send them, Or wait no heall send to me Iall send to u, Yes yes, Do u know how parking works, no I'm\
+# not sure, Whatas your email, So he can send them, Rahafsatary@gmail.com, Can u check ur email, Did you get them, Yes, \
+# What do they look like, Do they work, Did u send them to ur mom, Yes yes they work I sent them to mama, Okay slayyyyy,\
+# Thank u pooks I love you, I canat wait to hear how it goes, I love you more, ai ai ai, transportation wasnat gonna work\
+# out :(, He doesnat drive ?, Nawr he has to get his permit renewed, Plus w what car lols, Weare just college kids, \
+# Trust one day tho, He has a job at Microsoft he ainat no college kid, Heheheheh, okayyyyyy and, Silly, Also u don't \
+# have to pay- I will pay him for them bc I feel bad I'm reason we couldnat go  there were no buses after my lab which\
+# ends at 4, So it's on me, Girl, Idc, Thatas between u and him  we got tickets from u so weare gonna pay tf, Mama well\
+# Zelle u and u can send it to him, Not up for discussion, Why are u yelling at meeee a1i, i14i14, Itas ninjagram day \
+# there are ninjas going around giving valentines grams I got the biggest jumpscare I forgot it's today, IM \
+# DEAAAADDDD, I PLAYED THE LIVE, I was so scared, HOW WAS THE SHOWWWW, i14, HIII POOKIE IM SORRY, Iave been so busy, \
+# Mama said it was so funnnnnnnbbnnn, She loved it it was so funny, She will Zelle u 100 okie ?, i14, Okie mamas, I'm \
+# so glad she had fun yayayaya, Who did she go with?, Gha, Slayyy was it not inappropriate for her, Hi, I'm sorry I \
+# forgot to reply wallah, Pookie please call me I really need you today, Like more than ever, Pleas pleas, Even for 20\
+# min, Even 10, Pleas e, I need some yara wisdom bc I lowk mesed up today, Omg yes baby, Sry just saw this I was \
+# working e my lab partner, Pick up, WHAT, NO FUCKING WAY DUDE, LMAOOOOAOAOAOAOAOAOAOO, What did the others say, Wait \
+# so they actually left u???!, WHAT THE FUCK, HUHHHHHHHHHHHHHH, bruh what, Like actually wtf, Why did they say yes to \
+# going w her, She wouldnat have left everyone there, This is insane, How long is the walk, Bruh, I canat believe \
+# this, Whereas the comradery, Whereas the basic decency, I'm sorry baby, I miss u so much, I miss you so much more \
+# Iave been thinking about you all day wallah I need you the most right now, STopppp my baby1 im gonna cry u don't \
+# understand I need my rahoof too, No one would understand besides you and I don't wanna text, When r u going home, \
+# Pookieeeeeai, Idk bro I'm just sitting and reflecting on life now, U should go home this weekend so we can see each\
+# other, At least once, Idk if I can go home I really wanted to buy my dad isn't here and idk if mama can take me, \
+# Mmm ugh, We have to wait till spring break, How r u gonna interact e everyone when u get back to the apartment, \
+# Idk, What should I do, I really just don't wanna talk to anyone, Lol, I would just go to sleep, Yes, Like say ur \
+# tired and just sleep, Avoid any questions, Such as, What do u mean, Like just go to sleep lmfao, Any questions, \
+# Yeah if they ask how r u or anything, Also bb I do have to go pray and sleep, Yes yes, I love you <33 good luck \
+# with this and take it easy and rest before making any decisions or talking to ppl, Take it easy my love, Good luck \
+# on midterms, I love you more pookie ai ai ai, Pls pls, And do it twice, Yas, I love you, One more time, U got it \
+# bbg, Explain after pls, THANK YOUUUUU I LOVE YOUUUU, do u have time to call, Rn, Like ft, Can u call me, But I \
+# won't answer, Just make it show as a missed call, i14, i14, i14, i14, i14, i14, i14i14i14i14, 14, baby I literally \
+# hate to do this  but did ur mom Zelle me for the concert bc sally and I are looking at my bank statement as always \
+# since sheas on my acc and sheas v sus ab the Venmo and sheas like whoad u send that to  so I said rahaf but sheas \
+# zelling me back, Hey pookie yeah no worries Iall ask her I thought she already Zelled you my bad., Pookie what \
+# happened now, Give me ipdatesss, How are you, OMG BABBYYYY NAWRRR, WHY WHAT HAPPENED, also shit my phone boutta \
+# die, Can u please call me tomorrow, I really need to talk and cry to you, Omfg, My babyyyyy, What time r ur classes\
+# today so ik when to call, I have class from 10:20 until 1:30 then I'm done for the day, Actually, Are u feee rn, \
+# No more 10:20, I'm sorry baby I have class, Itas okayyyyy, I love you, I love you more, Can u give me a time \
+# pookie, So I can leave house, Does 3:30 work for u pookie, Yessss thatas perfect, Yayyyy, Are u free now baby, \
+# Urmmmmmm, Maybe in a few minutes, I'm stuck in a building bc it's raining and I'm waiting for sabren to come get \
+# umbrella, Okieee, Lmk when u can, Sabreen is calling you, Now, Why am I not receiving the call, Do you have a \
+# picture of you and your dad, I need it for my presentation, Pls answer fast my class is at 9:30, I'm doing my \
+# Arabic presentation on u lmao idk if i told u or not, HUHHHHHH, I'm sawwwwy I was sleeping I don't think u still \
+# need it right, I WANNA SEEEE, Pick up, https://docs.google.com/presentation/d/\
+# 120j_grVFVOdMKJ6b4d1pWFV4y9MsCW2q9T4JTvrkWzk/edit, https://docs.google.com/document/d/\
+# 1-NyARbERh6XGy2SsBSAZTT9ttD1YnD02v0ClT_Zah6g/edit, Do you want me to cry, I'm gonna cry, But also Iave never been \
+# to Palestine, LMAOAOAOAOAOOA, UR SO CUTE, BOY NONE OF THESE FACTS ARE RIGHT WHY DIDNT U ASK ME, NOTHING IS RIGHT, \
+# LMAO I HAD TO MAKE ALL OF IT UP BC WE HAVE TO USE THE VOCAB, she said we can be creative and lie basically, Just \
+# presented lwk ate that, I cackled so hard, WHY WOULD I MOVE TO JORDAM TO WOKE FOR AN AMERICAN COMPANY LIKE HUH, I \
+# love you, LOLLL, I love you more 111, Wooowwww, i14i14, Sally like ur sister ?, Does she know, Abt, Ibrahim, \
+# Youare so cute, When zaid gets really frustrated and mad his blood vessels pop and his face turns like this for a \
+# weekai, Is ur spring next week also, Just making sure hehehehe, We are coming today hehehhehe, Tehehehhehe a a a, \
+# This weather is making me feel silly, I wish to picnic, And I wish to drop out and live on a farm, BERIODDDDD, I \
+# hate accounting, LMAOAOAO, Okay then everyone be free Tuesday night, Iftar, At my home, OKAY ????, We both can we \
+# have a week, I am free always, Itas just Hanna that is working everyday, I'm sure we can find another dayyyyyyy, \
+# Yes I am downnnnnn, Ummm if I'm hosting Iftar then I canat go, Because I have to set up and help my mom with \
+# food ?, Likeeeee, NEW YORK YARA, I'm fasting tmr, But Iall come, Yes it does, i14, Yara said she can't, YOU LIE TO\
+# ME YARA, Can you guys get the hijabs from the mall since ur there?, I canat go to Paterson today, Just tell the \
+# group the total and weall Zelle or Venmo whoever, Okay we can get them yes, Thank you bb, Of course, How was \
+# protest, I don't wanna talk about tbh, I'm gonna go sleep bc I'm depressed Iall see u later, Okay np get some \
+# rest, Weare not buying hijabs from here weare gonna wait until sabreens uncle can get them, Theyare 20 dollars, \
+# lol, Ok, Can someone go to Paterson or nawr, We will see, Hi, I can do any day of the week, Pick something, Okay \
+# I'm down with any day, U guys tell me what works for u, Guys when is a day we can all go to taraweeh, Can we try \
+# the new masjid, Thereas a new masjid by ghazali, No, My brother and my dad went there today, Baba said very nice \
+# women section, Confirm, I would change the day pookie anything works for me but I don't think any totter day \
+# worked for anyone, OH IM SORRY, Ok can u give me five mins, Well like dress, Like do u have nice Ramadan dress, ]\
+# Not necessarily abayaaaaaaa, Ibrahim drank today, He went to a bar with arori to celebrate aroris masters \
+# acceptance, How do you feel about that ?, I'm texting him rn, That is true, We canat just be like okay bro go \
+# home now we go pray, Should we pick another day where is it just Taraweeh?, Spill I want to hear all your \
+# fellingggsssssss and I really miss you and I am so sad I didnat see u yet I need you so badded, yayyyyyyyyyyy \
+# hehehhehe, I love you guys, I need you too I miss u sm more, I hope everyone has an amazing Ramadan, Happy vibes\
+# Love, Idk I don't agree with him on this, But I canat enforce my own opinion on him yk, Like Iall respect his beliefs, What was his\
+# reasoning for this, i14i14i14i14, i14, Heas, So, Philosophical, Tmrw is the first day of Ramadan idk if I can go also, Also, I \
+# knowww, Itas okay I guess I'm just :I, Just?, Like thatas me rn, No emotions no thoughts, And thatas okayyyyyy, Itas his own \
+# beliefs, But it's also a matter of what kind of boundaries you have for your partner, Yk, Yeah, Like, Idk where I draw my boundaries\
+# yet, What would u do in my place, Call me, I canat mama just came in our room crying, Thereas so much going on, Omg why, Okay . \
+# When this happened a few months ago, I got really upset and I asked for space for a few days because that is where I drew the line\
+# and he KNEW it because we have had conversations like this before., But this is different because, Me personally, I would ask \
+# myself how big of a deal this is to me . And how much differently does it make you feel about him, Ur case was diff bc it wasnat \
+# ab religion yk, And your future with him. Does this change alot of things for you, It was, Ohhh ok, But it was still different, I\
+# still love him obviously, Yes, But idk, Ughhhhhhhhhhh, Just be honest that it is Lowkey bothering you and you don't know how you\
+# feel about it. Tell him because it's gonna bother you forever if you don't trust me wallah, WHY IS MAMA CRYING, \
+# i14i14i14i14i14i14, i14i14Nvm we good lmao, i14, Thank u for this advice I wouldnat have resolved this without u baby, Oh \
+# family drama but we got it resolved lols, I love you, Itas okay to care, About things like this, I know you don't want to seem\
+# acontrollinga or anything along those lines but that doesnat have to be the case for you to care you know, Hehhehehehe, thank \
+# you for saying that, My sisters are in the room and theyare sleeping so they said I canat ft, Can we text?, Or is what u wanna\
+# talk about not textable, Itas okay no worries bbg, We can also use signal if u want, There is nothing I wanna talk about \
+# really I just miss you, Do u love me, I need bestie reassurance, Are u mad at me, I MISS U MORE BRUH, I literally love u so \
+# much youave been in my thoughts and duas extra lately, I pray allah gives ur heart the ease and love u deserve in this life, \
+# How have u been baby, Youare so cute, I'm okay, Idk, I think, mmm elaborate, Everythingas weird, Like what and how, School or\
+# ur family or Joanna, I hate whenever my relationships with people change because I let it consume me more than it should, \
+# And I feel like I deserve everything, Mmmm I seee, Ans then I overthink so much and I know it's not worth it but idk I am \
+# too emotional to just let things go, I cry to sabreen so much, Your heart is just so big and it's okay to be heavily \
+# invested in ur relationships but ur right it just opens the door for greater hurt when those dynamics change, Youare so \
+# valid in that tho, Itas okay, To love and to hurt and to cry, I hate it because it feels like it's so easy for everyone to \
+# move on, You are by nature programmed to be emotional, And I am just stupid and a baby all the time, what is this about is \
+# it catie, Yes, People are also really good at pretending, They might be internally annoyed or sad about something and just \
+# never show it, But I can guarantee u they feel things, I don't usually walk around carrying so much hate for one person but \
+# when I do it's really a lot for me to do, I know it canat be easy bb, And it's rooted in the hurt she caused u, Itas not \
+# like u woke up and chose to hate her out of no where u know, The humbling treatment u had to put up with wouldave made \
+# anyone feel the same towards her so don't think ur over reacting, Ugh idk idk I always feel weird, And thatas okay, Have you\
+# heard of imposter syndrome, U should be feeling weird otherwise it would be concerning if u weare completely normal after \
+# experiencing all that, Yes what about it, Taylor used to tell me that I have it, I feel like thatas more with school stuff \
+# or at least thatas the context Iave heard it being used in, U think u have it in ur social circle?, And that I invalidate \
+# my own feelings because I feel silly if no one around me is there to validate them, mmmmm I see, No but she only brought it\
+# up when I talked abt my family and Dre, Freinds, And relationships, It makes sense, Do u talk to people when u feel these \
+# things? U should bc u can get the validation for them that u canat provide for urself just yet, Like whenever u feel sad \
+# happy annoyed angry etc talk to me or sabreen, But it's really ugly and needy to do that, Truly I think we can work on \
+# validating ur own feelings together with time, What if I'm crazy, No not at all wtf, Itas completely normal, No but what \
+# if I think it's okay to be feeling this way and I tell someone abt it and then everyone thinks I'm crazy, I dont want to \
+# be crazy, If I do judge Iall be sure to lyk tho don't even worry ab it, Like specially when everything happened eunice \
+# kept telling me I'm valid and then she turned around and told Catie everything and agreed with catie that it's atoo mucha \
+# like Maybe people will agree with me but they don't actually mean it and I'm actually crazy, I'm sawry, I'm just a baby, I\
+# think that was kind of messed up of eunice to do tho in the first place, It wasnat right to not communicate to u that she\
+# thought what ur saying was too much, Never be sorry literally what r u sorry for no, Ur not jusr a baby ur literally a \
+# human being with normal emotions??, No one is a saint that doesnat think or do odee things, You are rahoofie not an\
+# imposter not a baby not a crazy person u are valid and loved and sane and u are my rahoofie, I love you so much, Thank \
+# you yaryoora, You are my baby, I wish, To see you soon, I love you so much more, Me too, Inshallah, What r u doing tmw, \
+# I have a gazeema but maybe we can do something earlier in the day, Iftar with parents, Wait shit I forgot my moms app, \
+# Mmmmm, Itas okay, I have to stop cursing, Tell me nawr, Youare so cute, Thanks g!, Yes, Hehehehe, I'm free all week, \
+# Except Thursday, We gotta wake our silly tushies for suhoor girlypop, Me too but free all week, So I'm down for studying\
+# wed, And we can go taraweeh after, Weall plan it out as it get closer tho bc idk when gazeemas pop up, Yassssss, \
+# Inshallah, Okie dokie, I wanna have sleepover with u :(, I want to visit swarthmore again, U MUST SOON, I was looking \
+# at camera roll and I missed cuddling my pookie in the morning, Also today the protest bro, Had me nonverbal like a way \
+# I never was, It was so sad, Like not the protest itself, But, I really miss cuddling you in the mornings too teheheheh,\
+# Seeing those pigs come out of the building smiling and walking back and forth, And feeling so helpless like deanna and\
+# i were ab to cry khallas, I came home and just slept, Usually porters have like a purpose or at least energize u and \
+# motivate u after ir but this one was just ugh, Who ?, And the counter protestors as Sarah deanna and I were walking \
+# to it saw us w kuffiyehs and told us to go back to Gaza like sir pls, The ones buying land, Thatas what it was for \
+# the estate sale for West Bank props, Property, Babiesssss :(, I was so worried when I texted u about it and u said u \
+# weare depressed wallah I kept thinking about you, Bro, No it's okay I feel like I had to go bc having that evil right\
+# in front of u like quite literally across the street from u wakes up up even more, I need to get back on the board \
+# of sjp I took a lil break bc of how many classes I'm taking but no more im back, yeah shi was not fun but I felt \
+# better after taraweeh today, Baby girl don't stress yourself out youare doing so much already, Donat even worry \
+# about it, We should sleep bb we have to wake up suhoor, I love u eternally, a U 1UU U U UUUU, I stay awake all night\
+# 14, Good night habibi, what art thou doing today, would u like to go to Barnes and noble and Ulta with me and we go\
+# back to one of our houses and chill, Weall be done before iftar ofc, Hiiii, I don't think my mom will let me go \
+# out tbh, Sheas gonna say I havenat spent time with them and I am going out even on the first day of Ramadan, a, \
+# What do u think my mom should make for Iftar tomorrow, Something that everyone likes, Real, Its okie bb I \
+# understand this trusttt, hmmm kabseh maybe or mansaf, Anything she makes is amazing and everyone loves her \
+# cooking, Yes but what if like Hanna and Eunice don't like it yk, I think they will, U can also double check w them\
+# pookie, What would u guys want to eat tmr, Do we like seafood, Or like should I stick with rice and chicken like \
+# Arab kabsa, Ummmm but kabseh is rice it's also carbs, YUMMMYYYYY, But the pasta has shrimp, 6:30, Pu at 6:30 \
+# pookie it's okie, Yes I want to see you tf, Wait so what food did we decide, Pu in fancy dress thobe vibe, \
+# HELLOOOO WHAT FOOD, I think the majority has voted shawarmah, Was it corn ?, Do u guys like tres leches, So u \
+# don't like it, Ugh, LIARS, INDIFFERENT MY ASS, Tehehehehhe, i14Yummy yummy teheheheh, i14I'm gonna sob 2, Yes 6, \
+# 6 is good, It looks like flowers to me, Haram bro 32, Whatas ur familyas address in Amman, Is it near jabal Amman\
+# by any chance, I'm sorry oh my god I was half asleep when I opened ur text I thought I replied but I didnat, IM \
+# SORRY, WALLAH, Girl youare good LOL, But theyare so cuties, And my address, Is not near Jabal Amman our house is\
+# in aAl madinah alryadiyaha or sports city, Weare like 12 min from jabal Amman, Why ?, Why why why, Why why why,\
+# I got into Sijal 3, REALLLYYYYYYY, MABROOOOKKKKKK, But my parents are saying no, HEHEHEH, THANK YOUUUU, so I'm\
+# like let me see if ur house is close, mama said that if u decide to go sheas not gonna let u stay anywhere \
+# but with us, Amman is all close to each other, What day would It start ?, AWHHHHHHHHH, I'm still choosing if\
+# or should do the first half of summer or second, Mama said public transportation is so cheap and thereas a \
+# bus stop next to our house, Like June 12-July 12 or July 13-August 15, thatas so goooooood, Girl I'm trying\
+# so hard, Mama said july 13- August 15 we are more likely to be there, And she said she can tell your \
+# parents that we would take care of you tehehhev, I'm telling my parents this they don't care tho they don't\
+# wanna send me to Amman alone, Mama said she can convince your mom, Sheas invested, PLS YES, YES PLEASE I \
+# NEED ALL THE HELP I CAN GET, But like tmw bc this is fresh news for mama today, Okay okay sometime this week for sure, Itas okay \
+# it's okay don't be discouraged because it was the same way when u got into swat, Yeah, She kept saying no until u made her day yes,\
+# I'm hopeful, Hehehehe I'm so happy for you teheheh, EEEK IMAGINE US IN AMMAN TGGG, ITS SO CUTE YARA YOU WOUKD LOVE IT I WOULD TAKE\
+# U PLACES SO WOW AND IT WOULD BE AN EXPERIENCE YOULL MEVER FORGET, AAAAA STOP IT RN IM GONNA CRYYYYY THINKING AB ITT, I have to \
+# catch u up on summer plans, Bc inshallah I might go to Seattle and shadow Ibrahim at Microsoft, WHATTTTTT, Like first half of \
+# summer and second half do Sijal, AWWWWWWW, yeah but the purpose would be to work on my own projects and participate in hackathons\
+# there, And network, Itas not anything that can technically go on my resume bc shadow positions arenat official, But id still be \
+# there teheheheh, Yes yes thatas so amazing I'm so happy for you yaryoora, I just have to get funding approved by my advisor \
+# first, Itas okay it's still an experience, Thank you babyyyyyai ai, My funding for Sijal is alr approved, Inshallah everything \
+# works out for you inshallah inshallah, Inshallahhhhhhhh, I canat wait to see u td bb, I canat wait to see you too I miss you so \
+# much, Now I have to go wrap samboosa, I'm cominggggg, Huh, Questioned aOne a, Front, Itas open. One, Who left their cookies, What\
+# time is the appointment, Are we still going to taraweeh today, Can weeeeee, Or we can go to Al Mustafa, There is so many Ahmad \
+# salehs, Which one, Allah yerhamo, Who, I think ghazali, No?, I think he went to ghazali, Roa has told me about him before, Oh my\
+# god, Roa told me that last year he got into an accident with his friend as well and his friend got paralyzed, and he used to \
+# get in so may accidents in high school, I think 8:30 let me check with mama, My mom said she will see if she has energy after \
+# cooking today, 8:30 yes, Yes yes new one, Is it at cba, When should we leaveeee and how should we gooo, I think my dad is going\
+# so I don't need a ride bestie, No, Do u need a rideee??, Teheheheheh, Dar al Hadith, Like 8:30, Yes it does but knowing my \
+# family they will leave late, But u should leave earlier if u can, 8:20, Itas near sabreens house yara, Weare leaving now yara \
+# I would come get u but we would be so late, I'm sawry I wouldave made baba leave earlier wallah, Okay but I told u this, I \
+# said it's new so thereas barely anyone, Hi I miss you, I know we saw each other yesterday but I feel like I didnat see u, Can \
+# we hangout alone soon, I canat go today :(, Also r u going to taraweeh today, I was gonna say if ur parents don't wanna go I \
+# can shower rn then come and pick u up and u can have iftar here and we can go w my family, UGHHHHHHHH U HATE MEE, No it's fine\
+# I'm going to go shower now and cry, Thank you, You canat stop me, Turning my phone off, a, You just broke your fast stage, \
+# stags, Yes I would like to twhehehe, Can we do a combo of getting work done and also chilling, Okie yayyy what time, Ok what \
+# I did today was actually so good, I stayed up after suhoor, I drank coffee at suhoor after eating, And I worked until like \
+# 11, Then I took a nap till 1 and i was SO energized, so imma start doing that from now on, yeah we should both do it, Thatas \
+# what imma do during school too i A, So i can come after my nap and getting more work done tmw, yeah, I slept at 12 yesterday \
+# and i was good, Iall probs come home after taraweeh and dua at icpc then sleep, Omg Deanna I'm at a azooma and my family \
+# friend is saying sheas gonna sue ur grandma, Bro, My family friend said that a truck driver that works for Deannaas  \
+# grandmaas store knocked into her car and it was completely his fault but they are not taking responsibility for it, Crazy, \
+# Omg, But Iall come after it, Shhhhh, I shall show u, Roa said the same thing that he must have been racing bc he used to race\
+# so much in high school, Almost here, Okie dokie, I'm in my abaya bc I took my shirt off under it in the mosque bc it was so hot, \
+# Itas okie tehehhehe, So many people subhanallah not enough fans, Subhanallah, I'm here, Cominggggg, Front door, Liked aFront door a,\
+# Allah yerhamo, Ya Allah, My mom cried and she doesnat even know them so I canat imagine ya Allah ya Allah, :(, I saw a video, Iall \
+# send it to our insta gc, Itas just pics, Bruh what no ur not of course anyone would feel that way, Tehehhehe strawberry cheesecake\
+# samboosa, Tehehheheheh, I'm not allergic to anything I just wanna play it off smart so it's not like we were laughing, i14, I know \
+# silly, I pinched my hand to stop laughing, LMAO, this is how bad it was, I literally know I can tell that ur LYING, LMAO, Wait is it\
+# obvious I'm lying, I CQNTTTTT, BRO I CANTT, They gave me Zyrtec and cough drops, DEANNA WAS SI CONCERNED, PLS, NO ACTUALLY, I feel \
+# so bad, I keep thinking about us laughing, I told my parents bro I canat, SHUT UP, I WAS ABOUT TO TEXT U, DAYING ALLAH YESAMI7NA, I \
+# feel so bad but like, What weare we supposed to do ye3ni, I hope we arenat too obvious, No they believed ur coughing show, Liek the\
+# fatiha, YA ALLAHHHH, No youare not delusional wallahi, I told sabreen in the car, It was like a valley girl accent combined with \
+# Quran rapping I CANT, LMAOOOOOOOO what did she say, NOOOOO STOPPPP, Allhamdililah bro bc then now it seems like weare just girls and\
+# we were laughing during salah bc we were next to each other and not bc of him yk, She was like bro Deannaas mom definitely \
+# understood, STOPPPPPPP, I FEEL SO BAD, I literally canat imagine if sabreen was there too, I wouldave literally excused myself, \
+# Inshallah it seems like that bc if not it would be so bad, 3anjad ye3ni haram, Heas just a boy trying his best forrr realll, What \
+# did your parents say, Right thatas what I'm thinking, And why does Deanna not speak like that ye3ni, I think her mom just feels bad,\
+# Mama kept smiling and she was like Rahaf Khalas el donya Ramadan 3eib, THATS WHAT IM TELLING MTSELR TOO, like literally 3aeb and \
+# haram khallas, weall talk about this after Ramadan, jkjk khallas haram, And baba was like a la 7awla w la quwata ela bellaha  LIKKE \
+# I VANTTTT, You being there was not helpful  bc I would try stop and it's just you trying to breath to calm yourself then I go back \
+# to cackling, BAHAHAHAHAHA, OKAY I WOULD CALM MYSELF THERE TOO IF U WERENT THERE?, LMAOOOOOOO, YOU BEING THERE WASNT HELPDFUL EITHER,\
+# canat put us in the same room khallas, I have a forever reminder of it, My mom said the same thing, AND THE COUGHING BRO, brb \
+# offing myself that was so obvious, I don't wanna think about it, My phone is on 2% btw Imma let it run out of charge so if I don't \
+# answer thatas why pookie, Mama said she would have laughed too if she was there, Okie, Like anyone would have, I didnat want to \
+# obviously, It just came out I'm just a girl, I canat rahaf, I CANT EITHER, I KEEP LAUGHING, do u think deanna knows we were laughing\
+# and why, Ummmm idk I don't wanna think abt it, I feel sooooo bad stop, I hope she doesnat remember it, Maybe she just thinks we \
+# were laughing to our selves, I think she will forget like it's Deanna right, Inshallah, Yeah maybe she thinks her dad reading like \
+# that is normal, I hope she don't think that, We gotta do more group prayers and read it for her bc she cannot get used to that for \
+# reals, I canat astagfurallah ya rab, Yes mama asked if last time we prayed Deanna was reading like that and that me and u should \
+# lead with her, I feel like I need to pray maghrib again because that was NOT a prayer, Bruv I got into the internship program at \
+# Sijal 333, So Iall probs do that instead of Arabic classes at Sijal, But it's the earlier half of the summer like June- July, Would \
+# u be in Amman then  pls say yes, YAYYYYYYYYYY ALHAMDELLAHHH, yes most probably I will be, Teheheh, MASHALLAH my baby Deanni youare \
+# so beautiful, Hi, PLEAASSSEEEEEE, Im sorry im in lab rn, Can I call you at night?, Itas extremely short if u can look at it and let \
+# me know if I sound stupid, Yes yes, Later, Or send it and Iall look at it in like two hrs, We don't need to call I can just send u I\
+# know ur busy, Okie pookie Iall lyk, Mwah, Thank you thank you Heheheheh, i14Me if u even care, THANK YEWWWW, i14, WHY CRYINGGGG, \
+# Yaraaaaa :(, Why crying please tell, I miss you so much, Itas one of those days where I'm reminded that YOURE my best friend for a \
+# reasonai, Omg baby, What happened, I love you so much 2ai, Everyone is FAKE, I love you, WHAT HAPPENED, Basically it's all resolved \
+# now but catie told sabreen to sign up for this event with her and then told Eunice SEPARATELY. but catie didnat tell sabreen that \
+# Eunice is also signing up because she knew that if sabreen knew Eunice is coming, sabreen would tell me to come as well. And I \
+# didnat know any of this so it just felt weird today, You know like from the outside it felt like they all did this and didnat tell \
+# me but I talked to sabreen and she genuinely didnat know. As for euncie she knew but didnat tell me bc she adidnat think I would \
+# wanna comea, I'm sorry baby, Thatas so shitty, I love u and I'm so so sorry u have to go thru this alone there I wish we were \
+# together 2, Can u visit me soon?, I love you, I will see bestie, i14Us when our toilet overflows at 3 am and we have to dispose of \
+# the body, i14i14, i14Live laugh love Rutgers, i14i14i14i14, Ong, Omg*, Why did she do that ???, Arenat u guys liek friends, Girl \
+# what do u mean dramatic anyone would feel the same, Yeah like you guys didnat argue or anything for her to like intentionally \
+# exclude you right ?, Can we go out for suhoor tehhehehe, Yes just go and don't give it that much thought wallah and khalas u ignore \
+# her and pretend to be clueless, Hiiii, Weare all home dis weekend thehehehhe, Pls come 222, My mom would say ago and show her that \
+# its not her dads house a, Yeah me confused, And just to spite her go up and be super niceeee  hello How are you smile and leave aa, \
+# Yes don't say anything to her, The fact that she do this in ramadan is crazy tho where is the brotherhood and the sisterhood and the\
+# love and the peace, YAYAYYW, I have azooma today 2, Whhhhhaaaaat, We could have done suhooooorrrr, https://www.tiktok.com/t/\
+# ZPRTHbC1L/, https://www.tiktok.com/t/ZPRT9NBdY/, Thinking about you mucho extra latelyai  miss you so very very dearly I love you, \
+# 1111, Iave been thinking about you too wallah ask Ibrahim, like I was eating cake yesterday and I knew you wouldave liked it and I \
+# told him this is one of rahoofies favs, I miss you so much I wish to sleepover soon 2 and wake up and annoy u in the morning, can \
+# you please please please please come this weekend, what time is ur last class on fri, please itall be like a treat for getting thru \
+# these past two weeks of ur midterms, I will try yara idk yet, 3 pm, 3:20, Okieeeee, U can take a greyhound bus pookie! Thereas one \
+# 4:50 that arrives 6 to Philly, did u ask mama yet1, I DIDNT, IM SORRY I AHVE MIDTERMS I HAVENT GOTTEN A CHANCE YET, I think she \
+# wants me to come home bc my aunt and uncle from Saudi are there tbh, Can u ft me when u can bc I need to talk to u about Ibrahim, Hi\
+# baby girl, I will call u in a few, No ur not, I wouldnat be okay with it either, It all comes down to everyoneas boundaries in a \
+# relationship and everyone is different., Yes but it's also crossing a boundary for him, Text me, If u need anything, Eid Mubarak \
+# pookiess, Ur internet, Is booty, Bye bye we call later, Okieee say hi to everyone for me, Okieeeeee, Kisssss, Eid Mubarak my \
+# beautiful girl, I wanna see u guys today, Whoever is here, Should we do something, Qahwa house meetup1, Okie lmkkkkkk, Tehehehe, \
+# Sabreeni wbu, I was sad and depressed even tho we have lots of guests and my dad told me to do something with my friends so I'm not \
+# sad and depressed, My cousins from Utah came and I didnat even know abt them coming  but it doesnat matter bc I don't like them, \
+# i14, Hookah time, I couldnat get any cute cute pics but here, i14i14i14i14, THANK YOU HABBOOOBAAA, I LOVE YOUUUUUU, but I'm so sad \
+# bc I couldnat even be cute in my outfit and walk around in it  because My uncle made us leave the restaurant as soon as we were done\
+# eating because the restaurant said no serving hookah today and my uncle got pissed and wanted to leave, Thank you pookie, Your fit \
+# also ate I'm obsessed I shower my mom I told her I wanna get one of those just to have them, SO CUTEEEEEW, YESSS SENNDDDDD, So \
+# adorable, Removed an exclamation from an image, So cuteeee, Ate it up, Bro I canat do u know all my family from all over the world \
+# are visiting us rn, So my mother is liek a3eib u have to comea, Can we go tomorrow, Hehehehe, YAYYYY, I'm also eating slay, Yessss, \
+# Yes no broblem habibi, There was no FaceTime, Fake, i14, i14, i14, Ummmm, Ok, So u hate me, lol, Bye, I'm sorry I havenat had the \
+# time for ft bc it has to be a comprehensive one gworl, Okay, Fine, Wyd, Ur at ur dorm, I SEEE UUUUUU, Girl what, I was in dance, \
+# Just finished I don't move, Cont*, STOP BEING MEAN TO ME I JUST MISS YOU, Just realized an op is sitting near me, Marco, Can u add \
+# me to the Rutgers gc rq, Yes, DEANNNAAAAAA, Bro what, U literally look drop dead gorgeous, WAHT U MEANNNN, i14, i14, Hi hi, I'm \
+# sorry when can I call you today ?, i14, i14, i14And then she left the group chat, Hi, Look what caties mom dm Eunice, i14, OH MY \
+# GOD, I JUST GOT OUT BALLET, THIS IS IS CRAZY, DUDE, WHAT, CRAZYYYYY, INSANE, Bro, She left cunt cash, Wait what, Holy shit, Bro, In \
+# a meeting will ft after, And she blocked all of us on insta, Okie, She didnat block me, Yes just me sabreen and Eunice, Double erm, \
+# i14i14My Victorian child dying of the plague, i14, i14, i14, i14i14, i14, i14, Giving u live updates, i14, HI IM SORRY I HAD A \
+# MIDTERM TODAY, I just read everything, Omg, How are you feeling baby girl?, I wanna talk to you about this on call if u can, i14, \
+# i14, Okie lmk when u wanna talk pookie, Weare rlly good now btw, He slept over and we cuddled n shi and heas just amazing, i14Change\
+# in pp size over time, I miss you, I tried to FaceTime u pookie, So cute tehehhehebe, Nawrrr when did u ft I'm sorry I didnat see, \
+# Itas okie yesterday afternoon heheh, Why is my text green, NAWRRRER, RED KUFFIYEH SLAYYYYY, Why is it green idk, i14, I would ft but\
+# this is me rn, i14, Theyare saying smart cs things and I'm just vibing tbh, i14Itas okie me too tehehheeh, SLAYING, Queen shit, how\
+# did midterms go and how is finals studying going pookie, Idk how to study, BRIH SAME, I DONT KNOW WHAT IM DOING WRONG, like the \
+# information leaves my brain after I read it and memorize it, Idk what I'm doing, How about you, I FEEL UU, I havenat started yet \
+# lol, I mean I have two on Thurs and one sat, You got timeeeeee I have Monday and Tuesday, I took today as a break bc I woke up and\
+# didnat leave my room till 4 pm, NO WAY, As you shouldddddd, OKAYYYYYY IM SAWRYYYYYYY, IM TIRED OF DISSSSS, WHY DO I NEED TO KNOW \
+# THE ECONOMY, Ibrahim and I had the best morning so I'm just like above clouds rn and who needs to study in this mindset? NOT \
+# IIIII, SO U CAN BE MY SUGAR MAMA aai, FINNEEEE ILL STUDY SO I CAN BECOME SUGAR MAMA, praying for u mamas, call me when theyare done,\
+# Yes I will Teheheh, Good luck baby girl, i12, i12, Pookie, Hey, YOU WILL SLAY STATS, OKAY ????, YOU WILL SLAY, My stupid professor\
+# didnat grade it, I DIDNT GET TO READ, WHAT HE SAY TO U, DAFUQ, Unmmmmmm, Me too so what did u get, I miss u sm, i14, Me rn bc im not\
+# with u, I talked about u a lot today bc in Arabic the interview was asking for besti friend and I was practicing w the ppl I take \
+# the class w so I said my prompt ab u at least like four times tehehehe, I'm sorry I don't text more or call more but I hope u know \
+# ur the most special person in my heart, and I love u sm, POOKIEEEEE, I MISS YOU MOREEEEE, awwwww youare so cute stop, I cry, I love\
+# you it's okay I know weare both busy with finals ai, How are your finals going baby girl, CAN U VISIT ME BRO, just took first \
+# final, I didnat study a single drop for it, It was Arabic, When I say TRULY didnat study like I mena it I have just been focusing \
+# on fw, Cs, Itas fine tho, Arabic final only %15, Liked aLike this message if u will be in Wayne on may 20taa, MAYBEEEE, Oh you got\
+# ittttttttttt easy peasy tf, How is cs going, I spent the time I couldave been studying to plan my motherboard outfit instead, \
+# YOURE SO FUNNY, I CANT, Like sawriiiiiiii, May I ask why we wear the motherboard, Itas part of a computers CPU, we dissected a \
+# computer in one of our labs, And I stole the motherboard mwahahahaha, 111, Heall find out today!, Youare so cute, Motherboard so \
+# cunty so women in stem, Exactlyyyyy it's serving motherrrr(board), Locking in now till dinner wish me luck fr, Make dua for a real\
+# one ai, Good luck my baby girl, Inshallah you will do amazing ai, i14aaa, I fear I am not cut out for college, i14Meow, Who wanna\
+# pu to the carnival tmrw, i14, Can we pu, Do u guys hate me, Helloooo, Hellooooo, Hellooooo, Ok bye, Good luck my baby girl, How \
+# is it going, Pink Barbie woman in stem, i14, Cat don't like me, i14, He started it, Awwwwwwthatas so cute yaryooraaaaa my heart,\
+# i14i14i14, i14Can someone confirm this information, Hi I know that no one cares but who wanna go to the carnival, I wanna off \
+# my mom, Take me back to New Brunswick, PLEASEEEEEE, okay I'm sorry, I love her, Is this the one that is charging her $500, She \
+# should be charging HIM to take pictures of her beauty tf, MASHALLAH, Whatever meaning what, Yeah what and also u said that heas been\
+# to ur house and ur parents fed him too, Wow thanks for da invite, When are u leaving, To Hungary, How u leave and I no see u, \
+# i14POV : leaving manhattan, Ur face looks so nom nom nom, Nom nom nom, AGGHHHHHH, STAAAWP THATS SO CUTE, NYUas purple minions, Me,\
+# I just filmed a mukbang of myself, Bc I'm so bored, Itas okie my sleep schedule has been very messed up too, MASHALLAHHHHHHH \
+# AWWWEEEE, MAMMAAASSE, What u guys doing today, Me bored and misses my besties, CAN YOU GUYS COME OVER IM BOREEEEEEEEEDDDDDDS, \
+# HELLOWOWOWO, PLSSSSSS, SAVE ME, When you free, Weare hanging out asap, I miss that face, Okay so u hate me, Mashi mashi, IM SORRY I\
+# WAS HNPACKING, Ur the one that hates me now, ANDWERR, WAITTTTT, I CANT FT TEXT ME, IM UNPACKING YA BINIT, ft me when u can, Okie \
+# okie, Zooba, Idk if u can hear her, Zooba ?, What is a zooba, The discord game, Oh no, I CANT STOP LAUGHING, LIKE WHAT DO U MEAN U \
+# LIKE IT FOR SOLOS, we get less trophies for volcanoes, Is she playing a game, Yes, Gamer girl era, i14HELLO, WHAYTT, i14i14, god why\
+# does he type so slow, i14, i14, AWWWW, THATS SO CUTEEEEE, he types so funny, zontttt be xenophobic I type worse in Arabic, No \
+# dumbass I mean like heas so expressive, oh LMAO, I agree, Is his family like chill, aAfter talking about your beauty for half an \
+# houra, So cute, Not rlly theyare religious but theyare not like personalityless, I was just showing my mom and she was \
+# flabbergasted, SO CUTWEEEEE, I love your family theyare so cutie, i14, i14, i14Trying to make bondo and Lulu like each other, Meow,\
+# Ur having dinner with us tmrw mama is making ma2loobeh, YAYYY what time shall I come tmw, Wait I feel bad they wanna hangout tmw, U\
+# should tell them to come too, Yes okay Iall tell them, Do u guys wanna come over, Whenever tbh like 4 or 5, Can we do beach day \
+# also :D, Thatas early, Can u stretch it to like 9:30, Coming, Feel better hannushka babyyyyy, Yes pookie u can come, i14, i14, \
+# i14, Can u pleaseeee comeeeeewww, U can take a break tf, Guys, Itas okay, Feel better sabreen bean, 4 yup, No literally bring him,\
+# PLSSSSS, Why isn't ur location shared w me:/, I have mine shared, On my way!, Oh it unshares sometimes idk why, Can we make tea \
+# at ur house I brought something that taste good with tea Teheheh, Wait so what time do we come tmrw Deanna ?, i14, PLEASEEEEE, I\
+# can give rides my mom is taking me, Are we dressing cute, What are we wearing, Can u make me some shots too pls shawty, Almost \
+# there, Come outside, Meowwwww, We here, So cute, i14, Why am I crying, No literally same, Bruv have u watched bridgerton yet, \
+# Noooo not yet, Is it good, Yes don't, Do *, It, Okie heheheh I shall watch, i14, Lulu cuddling my foot, STOPPP, AWEEEEEEEEE, \
+# like how do u not get suffocated from allergies when she sleeps next to u, Do you know how many allergy fighting things I put in\
+# my body every morning when I wake up, Anything to cuddle with my babies, stop, But also like put me on, PLSSS, guys the the hot\
+# tub is getting cleaned and filled today, When do u guys wanna come over for hot tub, To be fair she called him a fat ass, \
+# Anyways pick a day guys I am free all day everyday, No bc my mom was like, These children are advancing bro, OKAY WHENNNN, Is\
+# everyone good with thattttt, We can do another day then too, We actually don't know, i14, i14Teheheh trying it for the first \
+# time, Can we go dumpster diving, Guys what day are we doing hot tub, I love Emma sheas such a cutie we used to talk junior year in\
+# gym all the time, Isnat he younger, Hell nah thatas a baby, i14, a, Who else, Bc why not tf, EHHEHEHEHEHEHEH, this is what I spent \
+# my morning doing, There is more in the making guys dw, Laughed at arahaf when she needs a summer hobby: a, Can we do something \
+# todayyyyyyyyyyyyy, i14, i14When yaraas 5 dollar bill was ripped at the diner, PLSSSS, i14, i14, How are you my love, Why don't we\
+# text I forget messaging exists lwk, Hi baby girl, I miss you, How are you, I don't want your mom to hear me LOL, I'm so calm, I \
+# have many thoughts in my head, like what am I doing with my life, Whatas going on, This isn't hot tub conversation tho, So Iall \
+# wait until u can ft, Iall journal my thoughts for now and then relay the information, Tell me the information I wanna know, \
+# Heheheh, Errrrmmmm, Soooo much teaaaaa, i14, i14, i14Yara if she was 6 ft, i14, Aint nooooo way, Thursday is goooddd, Eunice and I\
+# have work Friday, This is more of a philosophical conversation, We need to be on the phone yk, What time r u going to NB, Itas fine,\
+# Guys I'm so dead my dad is fighting with the movers bc theyare saying they need 100 dollar tip . They said awhen u go to a \
+# restaurant u give tip a and my dad said aAre u a restaurant?a, I KNOWWWWWWW, I can bring picnic blanket, But idk if it will fit all\
+# of us, So if someone has extra, We can double up, Yuh, Can someone bring speaker, Who got speaker, Errmmm, What are we wearing, \
+# Thank you ai, And what am I brining, Bringing, Okay slay me too, Okay I guess I will bring random snacks and chips from my house,\
+# I'm bring napkins and plates, I can make cold pasta salad maybe ?, Iall ask mama if we have the things, Is they good with \
+# everyone ?, And Iall bring some snacks on the side, Same here, Because no one wants to, Guys who else is brining picnic blanket, \
+# The one I have will def not fit all of us, I'm leaving now, Everyone is there right, Hellooooo, Okie I'm coming, How do I find u \
+# guys, Actually nvm I will follow ur find my Teheheh, Thatas so cute u can leave comments on the pics in the shared album, I \
+# CANTTTTTT, i14i14, i14FAIRYYYY, Will heaven be lit inshallah, Pookie can you send me the veggies from Trader Joeas, New healthy \
+# snack unlocked, i14Do I have everyoneas permission to post dis ?, HEHEHEH, I know youare all awake if u don't reply I will post \
+# 111, NAWWWWWRREE CAN U LIKE FIND A PIC OF IT ONLINE PLS IM LIKE DREAMING OF IT, Tehehehe ty, THANKKKKK YOUUUUU, Guys I wanna try \
+# crumbl so bad it's all over my fyp can we go one dayyyyyt, Waittt do u know exactly where, When I search up crumbl it says the \
+# closest one is in morris plains, Itas YOUR instagram, Is everyone free Sunday, Hot tub day?, Wait I can go, Mama said yes \
+# hehehehehhe, 10 min?, What timeeee, My mom is saying it's so far, I really wanna go but sheas like thatas so far bla bla bla bla \
+# and then we got into a whole argument bc sheas like aare u going that far so u can hangout with guysa Like ????? she's freaking \
+# crazy, Idk bc she think it's stupid that weare driving that far for a festival, Bro I put my phone in her face to show her and \
+# she was looking away, And she was like aask your dada and you know what happens when I ask my dad? He always says yes and then \
+# she gets mad that he said yes and convinces him to say no, Everyone can do hot tub day tmw?, Meowwwwww, HELLOOO, sabreen and \
+# Hanna said yes what abt everyone, Can u reply to what I said broooooo, I think it's for ocd right, Deanna can u come tomorrow?, \
+# Bathtub?, I mean hot tub, We can get pizzzaaaaa and it will be very very fun, Like 2, Probably as in yes, Okay I'm sure u will \
+# wake up before then, Yes, Front door, Itas open, Just come in, Love you pookie have a safe flight, Guys this random lady posted \
+# this video 10 min ago, https://www.tiktok.com/t/ZPRKH8qn4/, Does this mean it's not open yet, Well it turns out I was looking at \
+# a crumbl cookie in Wayne PA actually, Okay then we shall go and see, This is so random tho, Canat we go today after 3 ?, Oh okay \
+# I probably canat tomorrow, Itas okay, i14i14, WHY IS SHE SITTING LIKE THAT, i Love you so much that I got a perfume in ur name, I\
+# mean yeah the perfume is trending, HEHHE it's so good, Itas made in Dubai, Ehhehehe ur so cutie, How u got internet on the \
+# plane, Laughed at aI'm a skyline memeber trustttta, Perhaps, Also it is not open my mom and I just passed by it and it is indeed\
+# not open, No I looked at the door and it just says aopening Junea, This lady was right 2, BROOOOO, PLSSSSLSSA, i14Sometimes I feel \
+# like lulu is judging me bc she knows Iall never be as pretty as her, Meowwwwwww, I MISSSSSAS YOUUUUUU, HOW IS SEATTLE, Yessss, I \
+# have to leave before 2 I think 222, I have to take cats to vet, Yes theyare okayyy but we are trying to see if we can take them with\
+# us to Jordan so we have to take them to the vet first, I have to seeee, Good morninnnnnggg, Is anyone able to give me a ride ?, \
+# Yes, We are wearing pjs right, Here, Open door, Meow, What are you guys doing tomorrow, Cute but u didnat answer my question, I \
+# miss you yaryoora 22, Me too, Leave the room tf, August 18, i14, i14This lizard don't move, Who wanna go watch inside out tonight, \
+# And and also we can dress up in the colors of the emotions, Is somebody gonna match my freak2, i14Flower cotton candy at the mall so\
+# cute, STOP I WAS THERE YESTERDAY AND MY MOM WAS LIKE LOOK ITS YARAS DRESS, EID MUBARAK MY PRINCEEEEEESSSSSS, EID MUBARAK MOMMMYYY, \
+# I hope you get alllll the eideas today, KISS ZAIDO FOR ME Or else, i14Ibrahim saying Eid Mubarak to me was not on my bingo card, \
+# Plssss heas so sweet, AWWWW thatas so cute, Pookie just built different, What are your Eid plans theheheheh, We out here at the \
+# salat, Itas like an outdoor prayer, Near the space needle, downtown, Imagine the equivalent of Times Square, aU U UUU 214214, SO \
+# BEAUTIFUL JUST LOOKING LIKE A WOW MASHALLAH, i14, Pov We were invited to a azooma and then I ran into the president of the Arab \
+# cultural club at Rutgers. He came up to me and kept apologizing that I didnat get to be a chair on the board when he interviewed me,\
+# Guys the world is so small, He was liek please let me explain, I WAS LIKE ITS OKAY I KNOW THERE WAS SO MANY APPLICANTS LIKEE, And \
+# he said I promise I voted for u but the others didnat, Laughed at agood. he knows he fumbled bro a, NO LITERALLY THATS WHAT IT WAS \
+# LIEK, It was so funny and he was like I hope u can still come to our other events don't get discouraged, i14Digital camera pics, \
+# Guys this is my first actual Eid in America, No I'm saying like every Eid we don't do anything and I really hate it bc everyone has\
+# cute family vibes but we don't. this year we were invited to azzooma it was so cute, Good luck deanniiiiiiii, Guys I'm crying my \
+# mom randomly started doing mukbang asmr, IM STILL DYING PLS I CANY STOP LAUGHING, IM DYINHHHSGGGGG, DONT PLAYYYYY WITH HERRRRRR, \
+# She posted, i14, Guuuuuuuyssss, Can we do something before I gooooo, Who is free today, I'm bored, \
+# Guysssssssssssssssssssssssssssssssssss, Whatas everyone doing, i14Some 6th grade gossip for yaall, Yessss, i14This is so cutie, Can \
+# everyone try to come please, I have important news to give, Pls pls pls, So what time tomorrow Pookies, Yes, Itas better, \
+# DEANNNNNNAAAAA, Deanna when she found out I'm half Jordanian, Safe travels my love ai ai ai ai, Keep me updated habibi, Thank you \
+# baby girlllll, I love you mwahhhhh, i14POV all the kids in the airport wanna play with Lulu and bondo, Yara :(, Baby girl, How are \
+# you doing ?, I just read the gc im so so sorry, I cried so much when Sarah called on the phone yesterday morning with the news but \
+# since then Iave been on survival just make it back to nj mode asap like booking flights, packing, etc, So rn I havenat rlly \
+# processed processed anything, Im at a layover in Minneapolis rn, I'm so sorry I'm making so much dua you have no idea, Babbbbyyy :(,\
+# Thank you habibi, I'm very grateful I have the privilege of coming back in the first place tho, Idk if I'm going back to Seattle or\
+# not but weall see, Bc mama has surgery Wednesday, And I just wanna be there for her, Yes you really should, Like imagine ur mom \
+# dying then you need to go into the er, I canat imagine bro, Is it ur moms mom or ur dads mom?, Ohhhh, Mamas mom, Omg, I know, So I\
+# feel like if I go back to Seattle sheall just be depressed and worried on top of that, FUCKKKK THEMMMM HUHHH, so fucked up wtf \
+# I'm so sorry sabreen bean, But weall see how sheas feeling after next week, Yes but if u can stay then u should sheas gonna need\
+# you :(, I agree, Sally and Sarah think I should just stay home 1-2 weeks, I'm gonna gauge everything after next week, first \
+# after processing and also after seeing mama, I love you so much yaryooraI'm making dua for you and your family. I'm here for you\
+# pls pls call me if u ever need to talk, I love you more rahoofie, things are looking not as bad as before allhamdililah, they \
+# first said she has 72 hrs left, how theyre talking about possible recovery, I don't wanna raise my hopes too much yet yk but \
+# will keep u updated, howas Amman hayati, Send pics, Allhamdililah 1212, Yes yes keep me updated, Itas SCORCHIIIINNN HOTTT, I \
+# will send pics today we havenat done anything crazy yet, How are you hayati, Any updates on moving?, What have u been up to in\
+# Amman, Also whatas the time difference, Nothing wallah I don't know anything yet, Wallah azooma after azooma we have so much \
+# family that we need to see, 7 hour time difference, So it's 4 pm for me rn, i14Family time, Too much family time I miss u guys, \
+# Weare on a break ! Which is actually helpful bc I realized that I don't hate him I just needed spaceaai aai, Itas not like we can \
+# text anyway with the internet here ngl, Sheas a queen we love her, Im going to Saudi Arabia I got a 2 week internship 33, i14This is\
+# toofy, Guys sorry if my messages are messed up my internet sucks, My cousin works for a marketing company called Webedia, Itas a \
+# content creation company, Baby girl, Update me, How's Teta and mama ?, mama and I are making dua every day, What his name, I will \
+# find, 111, Give me full name rn, Bro, HIIII, sorry guys internet sucks here, I have internet only 20 min a day basically, \
+# Allhamdililah, Omg you have no idea how happy this makes me yara, Aawwwww allhamdililah, Also giving u a bit fat warning that u \
+# absolutely do NOT wannna third wheel with Adam and Eunice, LOL why, Bc too much PDA like crazy, Like they will make out in front of\
+# u 3adi, 11, NAWRRRR, Sheas the cutest little baby she loves to cuddle with everyone and she literally understands everything we say\
+# like wtf, Mama is really good allhamdililah she should be getting discharged today, THANK UUUU, And tete is doing better which \
+# none of the doctors expected, She moved her right side which she was paralyzed in earlier and remembered my cousin and spoke his \
+# name!!, I'm doing a lot better as well with this, I'm going back to Seattle July 2nd, In my digital marketing era, Ragad is in Amman\
+# if you wanna link, Hi I miss u, Hi I love you, Hi, I want my pookie back, how are you, how justina, hows the break w Justina *, \
+# Hiiiiiiiiiiiiiiiii, Hiiiiiiiii babbbyyyy girlllll, I miss you more wallah, Itas good wallah it's not like we have time to text each\
+# other anyways sheas working and I'm always with mama, Nawwrrr I'm awakwaaarddd, Mama just offered me argeelah with her in a \
+# restaurant 12aai, LMAO YESSSSSS, SLAYANA, How has it been with the time off like how do u feel, Omgg, Wait so are u breaking up w \
+# her, Like not be friends w her anymore *, Friendship breakup?, I feel fresh and I feel like I will never do long distance ever again\
+# in my life, AWWWWEEEE, YARRRAAAAAAAA, SO CUTE PLS, i14i14i14i14, Cousins grad party aai aai aai, i14, THANK YOU BEEBOOO ILY \
+# HEHEHEH, i14i14Yesterdayas feast, I love you guys, I stole my mommyas gold from when she was a bride aai aai aai, HIIIIII, \
+# MEOWWWWW, Now we can have shit internet together, Oh okay, Hotspot me pls, i14Bro my cousin and my sister are calling every single\
+# Starbucks and doing this, i14Help, i14, Guys pls watch them pls, i14, i14i14i14My sister asked my mom why did u love baba and my \
+# mom brought those pictures, No u cantttt, Yes she got engaged a week ago, Oh I didnat know abt that, Girl thatas not the same \
+# salsabeel, I just realized, YASSSS GYORGYI KNOWS WHATS UPPP, i14, hehehehehhe, I know sheas gorgeous right, Theyare at my house \
+# but I'm sleeping over at my grandmas rn hehehe, Laughed at an image, Bismillah, Hi, Sorry for not replying, But yes break up, 2 \
+# days ago actually, Haiiiiii, Iall ft u soon, AWWWW SO CUTE SABREENIIIII, i14More cat content, She won't let go of my hand, HAPPY\
+# BIRTHDAY PRINCESS, I love you so very much and I wish u were w me rn, What are your plans for the day princess, THANK U BBBB, I\
+# wish I was w you 100000x more wallahi, weare going swimming in a lake near our house and inviting all our friends, then going to\
+# a cafe, and do cake stuff there, reheheheheh, AWWWW, THATS SO CUTE PLS SEND PICSSSS, i14i14i14i14i14i14i14i14i14, Can u ft rn,\
+# YARAAAAAA, YPYRE GORGEOUS HELLOOOOO, Parents, And yes, i14, Pookies I am officially announcing that I am a single girly now,\
+# Not congrats guys, Yeah and well it was mutual we just had to agree that it isn't working out anymore, I felt crazy, Well \
+# still feel crazy, Well he texted today to see how I'm doing. We agreed to be friends and text every once in a while, Maybe \
+# that wouldave been a better idea, i14, Too late, I didnat cry when we broke up but I bawled my eyes out when he texted today idk it\
+# was so weird, Ughhh thank you guys I love you, i14My sister saw me crying and said she would give me a foot massage, I know I don't\
+# regret it at all, I love you more sabreen bean thank you mwahhh, ANYWAYS, I start driving lessons tmr!!!, And I will prob get my\
+# license here and then like transfer it when( or if) I'm back in America, YAAASSSAS, people don't know how to drive here for shit\
+# it's actually scary people just keep driving no rules no nothing,  so if I can drive here then I can drive anywhere, IM \
+# SAWWWYYY, I think u need like 8-11 lessons it depends on what ur instructor thinks . One lesson is an hour long So I can finish\
+# my lessons in about a week or so, Then u take a written exam and then a driving exam, Ohhhhh no it's like the US way, They \
+# wanna be different, I'm so sorry about you and joanna rahoof22, Do u wanna ft ab it later and talk?, this is also very random\
+# and urgent but if u canat help it's okay I just rlly need u, I miss u so much I hate this like I have no one to hug and I \
+# canat stop crying, Ibrahim and I fought yesterday and still fighting, i14i14i14, I literally cannot stop crying, i14, Hey bb,\
+# Are u okay?, I hate it too, I'm fine I'm just not thinking about anything, Did u guys talk more ?, No I canat physically like talk,\
+# I'm not sure if I'm very mentally okay for u to take relationship advice from right now but I am here for emotional support, Okay\
+# bbai ai, very real I'm sorry, Nooo don't be sorry, I love you, I love you more, I'm not home rn but we can ft later, Send more ss\
+# if u guys talked more, Ok I'm gonna reply now, I took notes on it lmao, I am very sad, This too shall pass, Ur cute hehehe, Ok \
+# weare good now, Anyways, Girl, What happen, Tell meee, i14i14i14i14i14i14i14, Then we talked some more, Interestingggggg, The \
+# work thing was  while ago right?, Like wayyyyy backkkkk, What work thing, Park*, Yeah, How are you feeling now pooks?, I told him\
+# upset that he didnat bring those things up then and heas just now telling me, like donde esta communication, I'm not a mind \
+# reader, I'm okay I'm just sad heas sad, and heas right I wasnat considerate ig, Yeah I feel like he tends to bottle things up \
+# and thinks he can solve them on his own then suddenly throws everything on u, Yes exactly, How did you know, Yeah and like \
+# youare the most person I know thatas open to criticism it's not like he has any reason to be afraid to point things out when it \
+# hurts him it's so weird, Just a pattern of whenever u guys fight. Like even when it came to adi he waited a while to tell u that he\
+# tried to be okay with it and stuff, Literallyyyyy like he couldave told me from the start and I wouldave cut adi off completely, \
+# Agh whatever I'm so drained rn, My pookie, I just ate a zaatar sandwich a first thing I ate today, but weare going out to dinner in\
+# a bit, He needs to realize that a lot of the pain he feels is bc he thinks he can deal with certain things on his own then when he\
+# realizes he canat he thinks its just okay to emotion vomit on u and youare just like 12aai, BERIOD, Okay good points to bring up\
+# on dinner youare so right, Thank you mama, i14Love you, i14, Pre dinner work sesh af, i14, STOP IM GONNA CRYYY BABYY111, \
+# Hehhehehe, Hi baby I never responded to ur texts in the gc but I wanted to talk about how youare feeling, Rahaf baby222, I'm so\
+# sorry, I canat imagine what youare feeling rn, Talk to me about it tho I wanna be here for you, I imagine it'll hurl during the\
+# beginning. I think when ppl say it gets better w time it's like after the initial hell period, this too shall pass, I wish I\
+# could be there ya alby, I can't say I know how much it hurts, I love you so so much, You can think of it as something that \
+# was meant to happen as it did you know like she was meant to come in to your life and show you the love you so deserve, and\
+# show you how you should be treated, carry those moments with you with gratitude and know that is the level of happiness/ respect you\
+# deserve, I love you so so so so so much, ai ai ai, 111, I am so proud of you habibi, Photo dumpy, THANK YOU POOOKIEEES, i14The \
+# videos my driving teacher be sending to my mom bro, I hit a curb today, I'm just a gurl, My driving instructor is so cute today she\
+# kept saying a remember you are a queen and the seat is your throne and the streets are a red carpet a, WELCOME TO JORDAN \
+# HABIBIIIII, I WAS STRESSINGGGG, i14, Omg me too, i14, i14TRIPLETSSSSS, Facetimeeeee meeeee when u wake uppp I wanna hear the \
+# teassssssssa, Yas I shall, It's a girl on insta she does her lessons in a cafe heheheh, Sroppp11, No I don't I think well high key\
+# slay wallah but I just remembered it is all, If anything I think itall bring us closer, And I would literally be down to live tg \
+# after graduating, Yes calling rn, Answerrrrr, I'm getting my nails done rn, Thatas the perfect time, To be on the phone, I call u\
+# later okie?, Noooooo too many ppl, Okok, Nawrrr don't apologize baby, 3 am is crazy ya haram, Call me whenever u want, Yeah Idrk\
+# tbh yet lol, I already told the girls to find a new roommate and my dad will keep paying rent until they find one, My parents \
+# tried everything, My dad has been trying his best for two months, ya alby2222, why don't your parents leave the car here and u live at my house and just commute?, If ur dad is paying rent and heas paying rent like why don't u stay at the apartment until they find a new roommate?, Rutgers is ranked 328 out of 800 on the QS world university rankings and Al Faisal university is 791 out of 800, U said youad be going to Al Faisal right?, Can u convince ur parents to just stay until u finish college?, i14i14Itas lwk cuter, Yara, LOL I'm just kidding I'm trying to lighten the mood, Are u not listening to me, We canat afford it, Listen, Okok I understand, I love you okay but I'm not telling u this bc i need solutions wallah it's a decision that wasnat easy for my parents to make they weighed every possible scenario including one where i stay and finish at Rutgers and it would cost my parents everything including my siblings educations (which btw school is not free in Saudi Arabia ) . My dad literally hired someone to help him weigh out the outcomes of everything single solution ever, You know, I know for a fact that if I tell my dad I wanna stay at Rutgers he will literally sell his arm and leg to give me what I want, he told me himself that its my call but I canat do that it's selfish of me, Also what does this mean, Stay at the apartment and do what, And I'm not going to Faisal we don't know anything yet, You think I don't know that I will be studying at a lower ranked collegethereas nothing I can do about it, Youare right I said absolutely nothing helpful I was just in shock and trying to think of any way to not make this reality I'm sorry I just couldnat believe this . youare truly so strong and thoughtful to make the decision to continue your education there for your siblings sake - I agree is the right thing to do and I'm so proud of you for doing it, 2222ai, I'm so sorry this is the case ya rahoofie I know it's a lot to carry on your shoulders, Itas going to be okay I can promise that, your parents are smart and so are you and if this wasnat the right thing to do then they wouldnat have suggested it in the first place, how are u feeling? whatas on ur mind ?, also can we call later? I have to go back to work, OH MY GOD, noooooo, wait what does that mean for u tho like are u transferring or whatas happening, NOOOOO, can u convince them to stay at Rutgers??, You have five houses u can live at like girl please stay with me and my family, and u have the Rutgers apartment, How r u feeling, We canat afford it, Itas okay, Yes it's okie I'm free rn if u can call, Idk Khalas whatever happens happens and whatever Allah has written for me is gonna happen I canat do anything about it . Idk how to feel., When are u coming back from Seattle ?, I'm gonna be in Jersey from June 29th to August 13th before we leave for Saudi, So will I be able to see you?, Also I will be in America every 5 months so I will get to see you it's okay, And baba told me I can do my masters wherever I want after college soooo, Wait off topic but I wanna show u my nails because Khalas no more depression life goes on and my nails are cute so who cares, i14BLUEBERRIES, I canat I'm on the bus :(, Yeah I know it's not like u can change it but it's still valid to just feel ur emotions rn even if u canat change the situation yk, Iall be back August 7th, So we can hangout from the 7-13, I canat believe this is happening, wait rlly yaya, did ur dad say that, why every 5 months in specific, Yallah Harvard inshallah, STFU, I THOUGHT U SENT THE PINTEREST JNSPO AND I WAS WAITING FOR UR ACRUALT NAILS, THATS INSANE, THEY SO PERFECT, literally thought it was Pinterest, LOVE., I know, In order to keep our green card, We have to come to America every 5 months, THANK YOU, THEYRE THE ONLY THING THATS MAKING ME HAPPY RN, Mmm okay allhamdililah, I love you so much 22, I wanna tell u something, I love you moreeeeee, speak child, I just talked to sabreen, do u wanna ft, Orientalism is the idea of the west having a degraded giew of the east, Including the Middle East, Yara, Thank you so much, I love you, You have no idea how much talking to you made me feel better, Babyyyyyy, I love you so much more, ai ai ai, i was just saying the truth btw like I wasnat just saying it to make u feel better, I wouldnat have told u that studying in saudi is gonna be fine yk, like I truly believe you will be more than fine bbg, I know that, But hearing it from you is different than knowing it's the truth, I'm really grateful that I can even get an education really, I was just crying to my parents about how much I'm gonna miss you and how amazing you are btw, I told them what we talked about  and they said that yara is the only person who is in touch with reality basically, Allhamdililah, stop1ai ai ai, IM gonna cry now, a. I lwk alr did to Ibrahim ab u moving, the others can get a little delulu but rlly I think it's more that our reality is much different than theirs yk, Also soooo random but which two should I order rn I canat pick:, i14i14i14i14Lmfao, i14i14i14i14i14Me FaceTiming my parents so I can sob and then cheering me up w laila2, I'm sorry Hannushka:(, Yes always have a plan B ai ai ai, Okay so, I'm coming back on the 29th of this month, Itas confirmed Khalas weare moving, Yeah :(, Yes, Nope, Canat afford it anymore bc my siblings will be going to private American schools in Saudi Arabia, I will go to an American curriculum  college there, Yes guys all of them bc public education in Saudi is not that good . I also went to an American private school in Saudi, I canat afford it anymore babes, No, We tried for months guys, Also I'm not an international student, Bc I have a green card, So things don't apply the same, Idk yet applications don't open until til mid August. But I'm applying to all the American colleges in Saudi, And I'm gonna try AU in Dubai as well, Not very good but I canat do anything about it  my dad told me he considered the option of me staying in America and them leaving but it would cost them my siblings education and will literally destroy them financially, Yeah like I'm not very happy abt this my life is being flipped upside down obvi but it's not the end of the world, Yeah I'm applying all over just for the vibes 1414, :(, Iave been crying every night in my moms arms wallah, Yes babies I have to be in America every 5 months, To maintain my green card, Bc my dad said I can do my masters anywhere I want so he wants America to always be an option. Even for the future he might find another job there u never know, I will miss you guys more wallah, And weare keeping our house in Wayne, Bc again you never know, This time has really taught me so much guys, Like my dad showed me how I should ALWAYS have a plan B, If he didnat have his private practice in Saudi and had lost his job in America then we would have been HOMELESS. So he kept telling me to say alhamdulliah that he does have this plan b and I can still get a great education., Well my dad thought that as well but then a financial advisor told him that he would be stupid to sell the house Bc the interest rate of the house went up ever since we bought it or some shit like that idk . So he told him selling the house would mean letting go of a huge investment/saving., Iave accepted it I'm not like delusional but I'm just sad  I'm okay now bc I know this was inevitable like we werenat gonna always be in the same town forever yk and I know weall still be okay, But we will be renting it out until we decide to come back, Baby, I love you, LMAOO youare so cute it's okie weare shipping everything to Saudi and my moms friend took her plants I think heheheh, Anyways I wanna give u guys a photo dump to lighten the mood, EXAT, EXACTLY, i14i14i14i14i14i14i14i14, i14i14i14i14i14i14i14i14i14i14, i14, Ur phone :, Bro whatas soccer gonna do, Omg, Thatas actually crazy, PLEASEEEEEEE, i14i14, This cat is an electrician actually, Girl, Eunice wtf, He uses his iPad, Probably, Bro what ???, PLEASEEEEEE, SHES UNDERREACTING, Eunice are u sure sheas a lesbian, HUHHHHH?????, What the hell, WHATTT, Bro where is the sisterhood fr, OMGGGG, theyare so fun, Use it, i14i14i14Tonightas look, i14DEANNA AND RAHAF IN AMMANNNN, THANK YOU POOKIEESSSSA, My neck is Stuck, aai aai aai, i14aI like this cafe because it feels like I'm in Dubai bling a, i14, i14Electric shock therapy day 2, Not doing very hot 1414, No it got worse and the Doctor said some shit about  emotional stress manifesting itself as physical stress. And she said I need to relax internally like bro ME ? RELAXED?, ., My neck and shoulders I canat move them, So I need to do physical therapy for a while, Yes it happens because when youare really stressed people tend to like clench their jaw really hard when they sleep or something like that?but there are some cases where the stress on the jaw travels to the neck. SHE EVEN CRACKED MY JAW BRO, DROPPPP, Bro whereas the update Deanna, I'm so sorry sabreeni this seems so stressful  your parents knew that it was the glitch I remember when u were calling your dad about it MONTHS ago it's so stupid that theyare blaming you for it, FUCK FAFSA, BROOOO MASHALLAH, IM GAGGED, i14I woke up to this stupid cat eating my hair, i14, MEOW MEWO, I MISS U, call me, When u can, I'm sorry yes Iave been so busy wallah youave been in my mind tho, Currently sleeping on the same bed with Ibrahim mother alone in an Airbnb in the middle of nowhere, Will update later!, UPDATEEWW, I'm back besties, Meow meow, Yes sharing on group chat rn trust, YOURE SO CUTE MASHALLAH, Subhannallah22, It really does look like turkey omg, I can do the 8th, Meow meow, Can I see u guys tomorrow, Hmmmm we have to go to immigration office so let me check if my parents are planning to go tomorrow or Friday, Itas okay bb, I'm at work rn so I canat talk but Iall call when I go home inshalal, ai ai ai, What are Pookies doing today, Aweee it's okie, Do u guys wanna go out for breakfast sometime this week?, We can go tmr, Where shall we go, Omg, Willow and whisk?, I can make reservation, Eunice is not in Wayne right, MEOW, WUNICE, Nawwerr, Yes cardinal is so cute, Letas go there, Hmm like 11?, Hanna what time u got work bb, Can u give me ride mommy, likeeeee I'm moving with u, she majored in economics like idk what more to say, Do u want her resume, I can ask her to send it to me and u gove it to your dad, YURRR, but America big tech pays more, I looked into it, Like Microsoft Seattle branch pays the most, saudi pay is good for general companies is the trend but for big tech companies which I'm aiming for is best in America, Inshallah, My backup is Robertas company but it's in Egypt, But it's closer to saudi, OOOOO, Yes we can visit 1414, Bestie, I have question, U did one of those mugs at hug a mug right ?, Yass porque, How much was it, Itas not worth it no it was like 50 bucks go buy ur self one and paint it, U can get like five nics w that, Or a abaya from urban modesty, or a necklace from nominal, LMAAOAOA I LOVE YOU, a recommend, Nic math, ngl if I ever smoke I do cigs now, sawri, Cigs are good I like me one once a year, I don't smoke but when I do thatas my choice, letas when weare tg, w some coffee 14a3, When I go to Amman I always get converted by everyone, Okay gonna pray and dress now brb, YESSSS, Takkabal Allah princess, What day do we get to hangout I want to plan from now so that u will have no excuse for anything, I wanna give u something, I shall ask mommy and lyk teheheh, EEEEEEEEEEEE, i14Baby, He doesnat stop crying unless heas held so weare all taking shifts, Euncie and I want to get birria tacos this weekend, Saturday ?, i14What were u doing in the middle of an island at 11 pm last night young lady, LMFAOOOO, sorry MOTHER, we went on a lil trip, vroom vroom, hi, I just wanted to tell you youave been on my mind so so much these past couple days, ( I'm tearing up sending this btw ), Hi princess, :(, Noooo tears plssss, you showed me the comfort of true friendship and you have such a special place in my heart, I know I don't say it enough #mybad, I love you yaryoora, You do hehehehe, i14, Where is this coming from tho if I may ask, NOOOOOO, nothing I'm just reflecting and in my feels rn, like truly no one is like u in my life u are so so so special my precious girl, no one will ever take ur place, You have the most special place in my heart, Can u promise u will visit me :(, I will inshallah inshallah inshallah, mama said weall do umrah in like two years and visit you lol, she told me if I save up I can go so u best believe I'm working my ass off to find a good job next summer, my children will KNOW khalto rahoof don't even worry, this is forever for real, YAYYYY INSHALLAH IT WILL WORKKK, weare going to see khalto yara, I can imagine saying that hehehe, AWH STOPPP, hehehe I canat wait to squeeze u tmw, YAY ITS TMW, HEHEHEHEH, IM SO EXCITEDDDDD, I canat Saturday 2, Sabreen bean what time did we say today?, Meeeee, YAYYYYYY, I am James Charles, Cominggg, AWWWW MY HEART, Just watched it ends with us, IM ENDED, AWWWW, Wait what time would u guys have lunch, Hm okay I have to see if I can make it, Poookieeesss, I wanna see u guys tomorrow, One more time, I'm sawry I couldnat come today no one could pick me up when u guys left, Yessss letas, Meow, What time tomorrow guys, And where did we agree, Yes berfecto, I can ask my parents to drop us off perhaps, Yeah sorry I meant can take us home *, Hey Pookies, Lowk 12:45, I'm four  min awayfrom the cafe, Okiwe, They don't close close, Just their kitchen, U can still sit there, I forgot to give u the hair dryer yesterday, Girl thatas okay lol, Baba is still home so come take it from him today, have a safe flight my loveai ai ai, Wait heas not going w u guys, No not yet, Not for another 2 weeks, Thank you pooks, Ohhhh gotchu, I'm not gonna go to ur house just for a hairdryer like 3aeb, Itas totally ok, Yara my parents want to get rid of them, Like, I'm telling u, PLEASE TAKE IT, PLEASE, bc if u don't then baba is gonna throw it away, Heas not gonna care enough to find someone else, okay when should I get it, Do u want a perfectly good working hair dryer and revlon drying brush to go to trash?, Ehenever, Whenever, will he be home should I knock or like will he put it outside like what do I do when I go, Knock and he will give it to u, Ur so funny, Okay, Heas not home rn but he will be home in about an hour, Ok ill prbly go later either way, YAYYYY, Sank you, i14, no sank you, i14i14, Didnat send these yesterday, AWWWWW, Meow meow I miss u guys, how was your flight habibi, also i didnat get to pick up the dryer yesterday and today im super busy idk when ill get but ill lyk, LMAOAOAOOA, Guys house is currently not ready, Currently staying at aunts house, I will give house tour when house ready heheheh, i14, Itas okie pooks heheh, Super jet lagged, How is saudi motherland mama, Itas so Dubai, I feel so out of place, Yesterday I went out with my old friends, Everyone is so DEMURE and chic, Also super nervous for uni bc yesterday I was asking my friends if ppl wear like backpacks or totes to uni and they were like of course handbags. And I was like oh really what kind of handbags? And they casually go, yk Tory Burch, Ralph Lauren , goyard a, And I look at Naya and I'm like girl these are 500 dollar bags are you sure? And sheas like yeah girl this is Riyadh . And then my friend Lara goes ayou know if u want something on the cheaper end get a long champ totea (btw long champ bag is around 250 dollars), So yeah!!!, THATS INSANEEEEEEE, what the hell, oh my god, house helpers is crazy  we have like people u hire like once  a week to clean ur house not constant helpers wow, ur so cute for wanting to help tho, Of course I'm gonna help what, wow the bags thing is crazy, hit up tik tok shop fr, No exactly us too, did u tell ur mom this what did she say, Yara it's like a fashion show, I swear, This is so reality tv, And Nayaas brother took me to my uni bc he goes there too he gave me a tour from the outside and woah woah, Not yet I havenat seen her, at least youall be familiar with it before classes, what do u mean, I woke up and sheas not here idk where she is LMAO, Lovelyyyyy, how is college send me pics, i14, This is my aunt, Sheas so funny, sorry uni, Sheas looking through her daughters clothes and realizing all of her lost clothes are here, LMFAOOOOOOO, thatas so real, ALLAH YEL3ANEK YA SALLY, BAGAHAHAHAGA, I will I will when I go I promise, ohhhh is this the one w the daughters sally and sarah, I havenat gone inside he just drove me around it, oh u didnat take pics on the tour yesterday, ohhhh okay, YEAHHH, damn ur parents let u in a car alone w a boy, Jo matter how close I am to a boy mine would never, Naya was with us, Also they don't care they know him, no same like even if they know them, Hes always been like my brother since Naya and I were in elementary school, ok weare sidetracking sorry, I'm sorry you feel out of place baby I know it's hard right now but give it like a month or two tops and wallah youall adjust, I wish I was there fr experiencing Dubai bling with u, I'm very very happy u have Naya, How was seeing her again and hanging out w the other girls, u have to tell me the characters and their lore btw like who r ur friends there, Ft me, This is a ft convo, Okay can I ft how, Now, Yes, i14, Call me again, Ok I posted but do u think the song is obvious, like should I remove the song, ANSWER FAST, No no, I don't think so wallah, bc it's w the caption yk, I know but no one understands the caption the song is just a song wallah, Okok, i14Guys I may have girlbossed a little too close to the sun, No bc it really did . I was just being silly I didnat think it would work wtf, STAWWWWPPP, I love you, I miss you guys sm, I'm so jet lagged it feels like I haven't slept in a week all the days are connected, Nothing crazy just seeing family and friends, Yesss I have the day I got here i was like girl I'm so tired and she  was like no ur not sleeping until I see u and she made me go out with all our elementary/ middle school friends, Okay so basically Deanna . I went to sleepover at Roaas cousins house her name is aya. So I always knew that roa had a hot cousin but I never knew he was ayas brother. Anyway he wasnat there bc heas in Amman but roa told me that heas always watching the ring doorbell camera so I acted really mysterious and gorgeous everytime I walked past the camera. Also roa and aya made me wear HIS SHIRT so that he could see, And then they would make jokes in front of his mom that awe found a bride for Amer a WHILE IM THERE. Anyways so basically he added me, i14, Hi mamas how u doin, When do u start uni, I JUST SAW THIS, LMAOAOAOA, I start next Sunday, i14I love it, Very very much, Hi, Rawr, I miss u poonice, i14My aunt has a parrot heas so sassy, GREEN, No one want to sleep in poopy bed, Pookie, When would u be home so my dad can bring the hairdryers over to u, I'm so sorry, Is he free tmw?, If he canat drop them off I can prbly pick them up, No no it's okay heas staying with a friend cuz the new tenants moved in the house so he just took the dryer with him, I shall ask him, Around what time, Ohhh ok, how about tmw like 11 or 12, Yes thats good I will tell him, When u said that was tmr for u liek today or tomorrow, Sorry big time difference LMAOAO, 8 pm rn, Heheheh, Let me guess for u it's about 12, Pm, Right, NO, I said around, PLSSSS UR SO REAL, I never said it was accurate, WHAT, Yara, U have to tell me, What is wrong with u, YARAAAA, can u promise"
+
+
+client = OpenAI(api_key)
+
+response = client.moderations.create(input= long_string)
+
+output = response.results[0]
+
+print(output)
